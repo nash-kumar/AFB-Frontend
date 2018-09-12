@@ -1,0 +1,32 @@
+  <header class="header">
+        <div class="flex-layout">
+            <div class="card-layout">
+                <h1>Welcome <span class="red">Accionite</span>!</h1>
+                <form class="login-form-layout" [formGroup] = "loginForm" (ngSubmit) = "onSubmit()">
+                    <mat-form-field class="login-full-width">
+                      <input matInput placeholder="Email" type="email" formControlName = "email" required>
+                      <mat-error *ngIf="!loginForm.hasError('email')">
+                          Email is <strong>required</strong>
+                        </mat-error>                    
+                    </mat-form-field>
+                    <mat-form-field class="login-full-width">
+                      <input matInput placeholder="Password" type="password" formControlName = "password" required>
+                      <mat-error *ngIf="!loginForm.hasError('password')">
+                          Password is <strong>required</strong>
+                        </mat-error>       
+                    </mat-form-field> 
+                    <div class="btn-layout">
+                        <button [disabled] = "loginForm.invalid" mat-button color="primary" type="submit">Login</button>
+                        <button mat-button color="warn"><span class="reg-msg">Not an Accionite?</span> Register</button>
+                    </div>
+                </form>  
+            </div>
+        </div>
+    <div class="textbox">
+      <div class="heading-primary">
+        <span class="heading-primary-main">Accion Friends Book</span>
+        <span class="heading-primary-sub">Driving Outcomes Through Actions</span>
+      </div>
+    </div>
+  </header>
+
