@@ -1,4 +1,4 @@
-<form class="container-1" [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+<form class="container-1" [formGroup]="registerForm"  >
 
 
   <div class="main-layout">
@@ -57,8 +57,8 @@
         </mat-form-field>
       </div>
       <div class="div-4">
-        <mat-radio-group class="inp-7">
-          <mat-radio-button style="margin-right:5px;" value="1"> Male </mat-radio-button>
+        <mat-radio-group value="1" class="inp-7">
+          <mat-radio-button style="margin-right:5px;" value="1" > Male </mat-radio-button>
           <mat-radio-button style="margin-right:20px;" value="2"> Female </mat-radio-button>
         </mat-radio-group>
         <mat-form-field class="inp-5">
@@ -70,7 +70,9 @@
 
 
       </div>
-      <button mat-button color="primary" style="margin-left:300px; margin-top:20px;font-size: 18px;" type="submit" [disabled]="registerForm.invalid" >Register</button>
+      <button mat-button color="primary" (click)="navigateLogin()" > <mat-icon >
+          keyboard_arrow_left</mat-icon> </button>
+      <button mat-button color="primary" style="margin-left:300px; margin-top:20px;font-size: 18px;" type="submit" [disabled]="registerForm.invalid" (click)="navigateLogin()" >Register</button>
     </div>
 
 

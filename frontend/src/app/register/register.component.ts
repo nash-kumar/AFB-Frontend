@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +16,7 @@ export class RegisterComponent implements OnInit {
   phone:Number;
   date;
   pass;
-  constructor(private fb:FormBuilder) { 
+  constructor(private fb:FormBuilder,private router:Router) { 
 
   
     this.registerForm = fb.group({
@@ -29,4 +30,10 @@ export class RegisterComponent implements OnInit {
   
   }
   ngOnInit(){}
+
+  navigateLogin(){
+    this.router.navigate(['login']);
+  }
+
+ 
 }

@@ -40,7 +40,7 @@
 }
 
 .inp-5{
-    width:57%;
+    width:64.5%;
 }
 
 .inp-4{
@@ -52,7 +52,7 @@
 }
 
 .inp-1,.inp-2{
-    width: 48.5%;
+    width: 48.9%;
 }
 
 .div-3,.div-1,.div-2{
@@ -110,4 +110,6 @@
 
 
 
-
+.btn{
+    border-radius: 50px;
+}
