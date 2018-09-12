@@ -1,0 +1,113 @@
+
+.main-layout{
+    display: flex;
+    flex-basis: 75%;
+    margin: 50px;
+    
+    justify-content: center;
+    align-items: center;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+    margin: 0;
+    margin-top: 2.5px;
+    height: 95vh; 
+    clip-path: polygon(0 0, 100% 0,100% 85vh, 0 100%);
+    background-image: linear-gradient(to right bottom,rgba(219, 9, 9, 0.8), rgba(51, 51, 51, 0.8)),
+    url("https://images.unsplash.com/photo-1525248152312-434c15a82f37?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=278e9355f4294b036c0ad9d60750e752&auto=format&fit=crop&w=1080&q=80");
+}
+
+
+.form-layout{
+    flex-direction: column;
+    background-color: white;
+
+   
+    padding: 50px 30px;   
+    
+    
+}
+
+
+
+.inp-1,.inp-4{
+    margin-right: 10px;
+}
+
+.inp-3{
+     width: 100%;
+}
+
+.inp-5{
+    width:57%;
+}
+
+.inp-4{
+    width: 60%;
+}
+
+.inp-6{
+    width: 36.9%;
+}
+
+.inp-1,.inp-2{
+    width: 48.5%;
+}
+
+.div-3,.div-1,.div-2{
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    margin-top: 5px;
+    
+}
+
+
+.heading-primary{
+    color: #fff;
+    text-transform: uppercase;
+  }
+  
+  .textbox{
+    margin-left: 25px;
+  }
+  
+  .heading-primary-main{
+    display: block;
+    font-size: 50px;
+    font-weight: 400;
+    letter-spacing: 15px;
+    
+    margin-right: 30px; 
+  }
+  
+  .heading-primary-sub{
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 9px;
+  }
+
+  .content{
+      display: block;
+      font-size: 15px;
+      max-width: 500px;
+      margin-left:100px;
+      margin-top: 50px; 
+      text-align: justify;
+      text-justify: inter-word;
+  }
+
+
+
+.text-1{
+    
+    text-align: center;
+    margin-right: 45px;
+    margin-bottom: 20px;
+}
+
+
+
+

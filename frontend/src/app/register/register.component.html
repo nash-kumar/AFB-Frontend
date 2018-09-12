@@ -1,0 +1,80 @@
+<form class="container-1" [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+
+
+  <div class="main-layout">
+    <div class="textbox">
+      <div class="heading-primary">
+        <span class="heading-primary-main">Accion Friends Book</span>
+        <span class="heading-primary-sub">Driving Outcomes Through Actions</span>
+        <span class="content">
+          <p style="font-size:25px;"> Fostering Collaboration </p> <br>
+          It's not enough to just encourage collaboration.
+          Companies need to create an environment where
+          collaboration happens seamlessly and effortlessly
+          and that's what differentiates most successful
+          companies from the rest.
+        </span>
+      </div>
+    </div>
+    <div class="form-layout">
+      <h1 class="text-1" style="font-weight:350;margin-left:50px;">Register Here <span style="color:firebrick;">
+          Accionite!</span></h1>
+      <div class="div-1">
+        <mat-form-field class="inp-1">
+          <input matInput placeholder="First Name" formControlName="fname" >
+          <mat-error *ngIf="!registerForm.hasError('pattern')">
+            Enter <strong>valid </strong>Name
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="inp-2">
+          <input matInput placeholder="Last Name" formControlName="lname" >
+          <mat-error *ngIf="!registerForm.hasError('pattern')">
+            Enter <strong>valid </strong>Name
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="div-2">
+        <mat-form-field class="inp-3">
+          <input matInput placeholder="Email" formControlName="email" >
+          
+          <mat-error *ngIf="!registerForm.hasError('pattern')">
+            Enter <strong>valid </strong>Email Id
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="div-3">
+        <mat-form-field class="inp-4">
+            <span matPrefix>+91 &nbsp;</span>
+          <input matInput placeholder="Phone Number" formControlName="phone">
+          <mat-error *ngIf="!registerForm.hasError('pattern')">
+            Enter <strong>valid </strong>Phone Number
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="inp-6">
+          <input matInput [matDatepicker]="picker" placeholder="DOB" formControlName="date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="div-4">
+        <mat-radio-group class="inp-7">
+          <mat-radio-button style="margin-right:5px;" value="1"> Male </mat-radio-button>
+          <mat-radio-button style="margin-right:20px;" value="2"> Female </mat-radio-button>
+        </mat-radio-group>
+        <mat-form-field class="inp-5">
+          <input matInput placeholder="Password" type="password" formControlName="pass">
+          <mat-error *ngIf="!registerForm.hasError('required')">
+            Password is <strong>Required </strong>
+          </mat-error>
+        </mat-form-field>
+
+
+      </div>
+      <button mat-button color="primary" style="margin-left:300px; margin-top:20px;font-size: 18px;" type="submit" [disabled]="registerForm.invalid" >Register</button>
+    </div>
+
+
+  </div>
+
+
+</form>
