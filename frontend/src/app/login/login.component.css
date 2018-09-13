@@ -5,6 +5,8 @@
   background-size: cover;
   background-position: center;
   clip-path: polygon(0 0, 100% 0, 100% 85.3vh, 0 100%);
+  max-width:1860px;
+    max-height: 955px;
 }
 
 .heading-primary{
@@ -59,7 +61,8 @@ h1{
 
 .reg-msg{
   font-size: 15px;
-  color: rgba(0, 0, 0, 0.4)
+  color: rgba(0, 0, 0, 0.4);
+  margin-right: 4px;
 }
 .btn-layout{
   display: inline-block;
@@ -80,4 +83,63 @@ h1{
 .login-full-width{
   width: 80%;
   margin-bottom: 10px;
+}
+
+@media screen and (max-width:1859px){
+  .header{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:1410px){
+  .header{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:1180px){
+  .heading-primary-main{
+    display: block;
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 15px;
+  }
+  
+  .heading-primary-sub{
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 9px;
+  }
+}
+
+@media screen and (max-width:900px){
+  .heading-primary-main{
+    display: block;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 15px;
+  }
+  
+  .heading-primary-sub{
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 9px;
+  }
+
+  .flex-layout{
+    width: 95%;
+  }
+}
+
+@media screen and (max-width:760px){
+  .header{
+    width: 760px;
+    margin-right: 50px;
+  }
+
+  .flex-layout{
+    width: 760px;
+  }
 }
