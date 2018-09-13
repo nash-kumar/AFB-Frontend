@@ -40,7 +40,9 @@
           <mat-error *ngIf="!registerForm.hasError('pattern')">
             Enter <strong>valid </strong>Email Id
           </mat-error>
+          
         </mat-form-field>
+        
       </div>
       <div class="div-3">
         <mat-form-field class="inp-4">
@@ -57,22 +59,31 @@
         </mat-form-field>
       </div>
       <div class="div-4">
-        <mat-radio-group value="1" class="inp-7">
-          <mat-radio-button style="margin-right:5px;" value="1" > Male </mat-radio-button>
-          <mat-radio-button style="margin-right:20px;" value="2"> Female </mat-radio-button>
-        </mat-radio-group>
+        
         <mat-form-field class="inp-5">
           <input matInput placeholder="Password" type="password" formControlName="pass">
           <mat-error *ngIf="!registerForm.hasError('required')">
             Password is <strong>Required </strong>
           </mat-error>
         </mat-form-field>
+        <mat-form-field class="inp-8">
+          <input matInput placeholder="Employee Id" formControlName="emp">
+          <mat-error *ngIf="!registerForm.hasError('required')">
+             Enter <strong>valid </strong> Employee Id
+          </mat-error>
+        </mat-form-field>
 
 
       </div>
-      <button mat-button color="primary" (click)="navigateLogin()" > <mat-icon >
+      <div class="div-5">
+        <mat-radio-group value="1" class="inp-7" style="margin-left:35%;" >
+          <mat-radio-button style="margin-right:5px;" value="1" > Male </mat-radio-button>
+          <mat-radio-button  value="2"> Female </mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <button mat-fab color="warn" class="btn-2" (click)="navigateLogin()" > <mat-icon >
           keyboard_arrow_left</mat-icon> </button>
-      <button mat-button color="primary" style="margin-left:300px; margin-top:20px;font-size: 18px;" type="submit" [disabled]="registerForm.invalid" (click)="navigateLogin()" >Register</button>
+      <button mat-button color="primary" class="btn-1" style="margin-left:300px; font-size: 20px;" type="submit" [disabled]="registerForm.invalid" (click)="navigateLogin()" >Register</button>
     </div>
 
 

@@ -16,16 +16,18 @@ export class RegisterComponent implements OnInit {
   phone:Number;
   date;
   pass;
+  emp;
   constructor(private fb:FormBuilder,private router:Router) { 
 
   
     this.registerForm = fb.group({
       "fname": [null, Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z]+$')])],
       "lname": [null, Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z]+$')])],
-      "email": [null, Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9._]+$')])],
+      "email": [null, Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9._]+@accionlabs.com$')])],
       "phone": [null, Validators.compose([Validators.required, Validators.pattern('^[0-9]{10}$')])],
       "date": [null , Validators.required],
-      "pass": [null,Validators.required]
+      "pass": [null,Validators.required],
+      "emp": [null, Validators.compose([Validators.required, Validators.pattern('^[0-9]{4}')])]
     })
   
   }
