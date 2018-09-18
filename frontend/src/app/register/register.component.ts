@@ -59,7 +59,7 @@ export class RegisterComponent implements OnInit {
     this.service.register(data1).subscribe((response: any) => {
     console.log("Response", response);
     if(response.success){
-    alert(response.message);
+      swal("Hey Congrats!!!", " Your a member of Accionite", "success");;
     this.router.navigate(['login']);
     }else{
     alert(response.error);

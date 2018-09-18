@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ServiceService } from '../service/service.service';
+import swal from 'sweetalert';
+
 
 @Component({
   selector: 'app-login',
@@ -28,15 +30,15 @@ export class LoginComponent implements OnInit {
     this.service.login(data1).subscribe((response: any) => {
       console.log("Response", response);
       if(response.success){
-      alert(response.message);
+        swal("Good job!", "Succesfully Loged In", "success");
       this.router.navigate(['register']);
       }else if(response.success){
-      alert(response.message);
+        swal("Good job!", "response.message", "success");
       }else{
-        alert("response.message")
+        swal("Good job!", "response.message", "success");
       }
       }, (err) => {
-        alert("Incorrect Login");})
+        swal("Sorry", "Incorrect Login", "error");})
   }
 
   

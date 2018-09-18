@@ -11,6 +11,7 @@ import { routes } from './app.router';
 import { ServiceService }from './service/service.service';
 import {HttpClientModule} from '@angular/common/http'
 import {MatDialogModule} from "@angular/material";
+import swal from 'sweetalert';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import {MatDialogModule} from "@angular/material";
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
   ],
 
     
