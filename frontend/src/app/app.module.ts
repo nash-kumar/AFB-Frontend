@@ -8,7 +8,9 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { routes } from './app.router';
-
+import { ServiceService }from './service/service.service';
+import {HttpClientModule} from '@angular/common/http'
+import {MatDialogModule} from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -28,12 +30,14 @@ import { routes } from './app.router';
     MatIconModule,
     MatNativeDateModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule,
+    MatDialogModule
   ],
 
     
   
-  providers: [],
+  providers: [ServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

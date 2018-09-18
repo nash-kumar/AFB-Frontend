@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ServiceService } from '../service/service.service';
 
 @Component({
   selector: 'app-register',
@@ -8,22 +9,24 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
+  
+  
   registerForm: FormGroup;
-  fname:String='';
-  lname:String='';
-  email;
+  firstname:string='';
+  lastname:String='';
+  Email;
   phone:Number;
-  date;
+  date:String='';
   pass;
   emp;
-  constructor(private fb:FormBuilder,private router:Router) { 
+  gender:String='';
+    constructor(private fb:FormBuilder,private router:Router,private service: ServiceService) { 
 
   
     this.registerForm = fb.group({
       "fname": [null, Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z]+$')])],
       "lname": [null, Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z]+$')])],
-      "email": [null, Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9._]+@accionlabs.com$')])],
+      "Email": [null, Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9._]+@accionlabs.com$')])],
       "phone": [null, Validators.compose([Validators.required, Validators.pattern('^[0-9]{10}$')])],
       "date": [null , Validators.required],
       "pass": [null,Validators.required],
@@ -31,9 +34,41 @@ export class RegisterComponent implements OnInit {
     })
   
   }
-  ngOnInit(){}
+  ngOnInit(){ 
+   
+  }
 
-  navigateLogin(){
+  // navigateLogin(){
+  //   this.router.navigate(['login']);
+  //   console.log("added");
+  //   const data = { firstname: this.firstname, surname: this.lastname , mobile:this.phone ,email:this.Email, dob :this.date, password:this.pass ,emp_id:this.emp,gender:this.gender };
+  //   this.service.register(data).subscribe((response: any) => {
+  //   console.log("Response", response);
+  //   if (response.success) {
+  //   alert(response.message);
+  //   } else {
+  //   alert(response.error);
+  //   }
+    
+  //   })
+  
+  navigateLogin() {
+    
+    var data = this.registerForm.value;
+    const data1 = {firstname: data.fname, surname: data.lname, mobile: data.phone, email: data.Email, dob: data.date, password: data.pass, emp_id: data.emp, gender: data.gender}
+    this.service.register(data1).subscribe((response: any) => {
+    console.log("Response", response);
+    if(response.success){
+    alert(response.message);
+    this.router.navigate(['login']);
+    }else{
+    alert(response.error);
+    }
+    })
+    
+    
+  }
+  navigateLogin1(){
     this.router.navigate(['login']);
   }
 
