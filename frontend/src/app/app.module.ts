@@ -3,21 +3,35 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
-import { MatButtonModule, MatInputModule,MatSelectModule,MatRadioModule,MatDatepickerModule,MatNativeDateModule, MatIconModule } from '@angular/material';
+import { MatButtonModule, MatInputModule,MatSelectModule,MatRadioModule,MatDatepickerModule,MatNativeDateModule, MatIconModule,MatToolbarModule,
+         MatGridListModule,
+         MatExpansionModule,
+         MatPaginatorModule,
+                              } from '@angular/material';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { routes } from './app.router';
+
 import { ServiceService }from './service/service.service';
 import {HttpClientModule} from '@angular/common/http'
 import {MatDialogModule} from "@angular/material";
 import swal from 'sweetalert';
 
+import { SearchComponent } from './search/search.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { SearchPipe } from './search.pipe';
+import { SortPipe } from './sort.pipe';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    SearchComponent,
+    SearchPipe,
+    SortPipe
   ],
   imports: [
     BrowserModule,
@@ -29,11 +43,17 @@ import swal from 'sweetalert';
     MatRadioModule,
     MatDatepickerModule,
     MatIconModule,
+    MatToolbarModule,
+    MatGridListModule,
+    MatExpansionModule,
+    MatPaginatorModule ,
     MatNativeDateModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
+
     HttpClientModule,
     MatDialogModule,
+    NgxPaginationModule
   ],
 
     

@@ -1,4 +1,6 @@
-  <header class="header">
+<div class="main">
+<header class="header">
+      
         <div class="flex-layout">
             <div class="card-layout">
                 <h1>Welcome <span class="red">Accionite</span>!</h1>
@@ -16,8 +18,10 @@
                         </mat-error>       
                     </mat-form-field> 
                     <div class="btn-layout">
+
                         <button [disabled] = "loginForm.invalid" (click)="onNavDash()" mat-button color="primary" type="submit">Login</button>
                         <button mat-button color="warn" (click)="navigateReg() " ><span class="reg-msg" >Not Yet Registered? </span> Register</button>
+
                     </div>
                 </form>  
             </div>
@@ -30,3 +34,4 @@
     </div>
   </header>
 
+</div>

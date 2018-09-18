@@ -1,0 +1,96 @@
+
+.grid{
+    max-width: 60%;
+    margin: 5px;
+    
+}
+.header{
+    color: firebrick;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+.email,.phone,.birthday,.emp,.sex{
+    color: firebrick;
+    
+    font-size: 20px;
+    font-weight: 200;
+    letter-spacing: 2px;
+}
+input[type = text]{
+    position: absolute;
+    right: 50px;
+    width: 20%;
+    height: 30px;
+    border-radius: 25px;
+    border: 1px solid white;
+    opacity: 0.6;
+    outline: none;
+    font-size: 18px;
+    padding: 15px 20px;
+    transition: all .3s ease;
+}
+
+input:focus{
+    width: 25%;
+}
+
+.bir,.se{
+    float:right;
+}
+.icon{
+    color: black;
+    margin-right: 7px;
+    margin-top: 4px;
+}
+.icon-1{
+    font-size: 18px;
+    margin-right: 1px;
+    margin-top: 10px;
+}
+
+.search{
+    position: absolute;
+    right: 70px;
+    color: lightslategray;
+}
+
+.main {
+    padding: 16px;
+    margin-top: 50px;
+    height: 150px; 
+  }
+
+  .page{
+      
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 50px;
+      
+  }
+
+
+.navbar {
+    background-color: lightgray;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  .text-1{
+    color: black;
+    display: block;
+    font-size: 40px;
+    font-weight: 200;
+    letter-spacing: 7px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    
+  }
+
+  .img{
+      width: 200px;
+      margin-top: 12px;
+  }
+  

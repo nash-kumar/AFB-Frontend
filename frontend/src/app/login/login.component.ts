@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required]
     })
   }
+
   onNavDash(){
     console.log(this.loginForm.value);
     var data = this.loginForm.value;
@@ -31,7 +32,7 @@ export class LoginComponent implements OnInit {
       console.log("Response", response);
       if(response.success){
         swal("Good job!", "Succesfully Loged In", "success");
-      this.router.navigate(['register']);
+      this.router.navigate(['search']);
       }else if(response.success){
         swal("Good job!", "response.message", "success");
       }else{
@@ -39,12 +40,18 @@ export class LoginComponent implements OnInit {
       }
       }, (err) => {
         swal("Sorry", "Incorrect Login", "error");})
-  }
+
+
+  onSubmit(){
+    console.log(this.loginForm.value['email'], this.loginForm.value['password']);
+
 
   
 
   navigateReg(){
     this.router.navigate(['register']);
   }
-  
+
+
+ 
 }
