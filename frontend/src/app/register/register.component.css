@@ -1,4 +1,6 @@
-
+.container-1{
+    padding: 30px;
+}
 .main-layout{
     display: flex;
     flex-basis: 75%;
