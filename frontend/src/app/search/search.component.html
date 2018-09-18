@@ -11,7 +11,7 @@
     <p>People You Know At <span style="color:firebrick">Accion Labs</span></p>
   </div>
   <mat-accordion>
-    <mat-expansion-panel class="grid" (opened)="panelOpenState = true" (closed)="panelOpenState = false" *ngFor="let tile of tiles | paginate: { itemsPerPage: 11,currentPage: p}|search:filteredName: 'firstname': 'surname'|sort: 'firstname':'surname'">
+    <mat-expansion-panel class="grid" (opened)="panelOpenState = true" (closed)="panelOpenState = false" *ngFor="let tile of tiles | paginate: { itemsPerPage: 9,currentPage: p}|search:filteredName: 'firstname': 'surname'|sort: 'firstname':'surname'">
       <mat-expansion-panel-header>
         <mat-panel-title class="header">
           <mat-icon class="icon">person</mat-icon> {{tile.firstname}} {{ tile.surname}}
