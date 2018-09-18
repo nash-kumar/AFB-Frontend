@@ -1,0 +1,34 @@
+<mat-toolbar color="primary" class="navbar">
+  <mat-toolbar-row>
+    <span> <img class="img" src="https://static1.squarespace.com/static/5ab6b93e5b409be7fa331cf1/t/5ac67b8c575d1f09cf1c833c/1535701410823/?format=1500w" alt=""> </span>
+    <input type="text" [(ngModel)]="filteredName" >
+  </mat-toolbar-row>
+
+</mat-toolbar>
+
+<div class="main">
+  <div class="text-1">
+    <p>People You Know At <span style="color:firebrick">Accion Labs</span></p>
+  </div>
+  <mat-accordion>
+    <mat-expansion-panel class="grid" (opened)="panelOpenState = true" (closed)="panelOpenState = false" *ngFor="let tile of tiles | paginate: { itemsPerPage: 11,currentPage: p}|search:filteredName: 'firstname': 'surname'|sort: 'firstname':'surname'">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="header">
+          <mat-icon class="icon">person</mat-icon> {{tile.firstname}} {{ tile.surname}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{panelOpenState ? '' : 'Click for details'}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="details">
+         Email : <span class="email"> {{tile.email}}</span>
+        <span class="bir"> Birthday : <span class="birthday"> {{tile.dob}}</span></span> <br>
+         Phone : <span class="phone"> {{tile.mobile}}</span>
+        <span class="se">Sex : <span class="sex"> {{tile.gender}} </span></span> <br>
+        Employee Id : <span class="emp"> {{tile.emp_id}} </span>
+      </div>
+
+    </mat-expansion-panel>
+   <div class="page"><pagination-controls (pageChange)="p=$event"></pagination-controls></div>
+  </mat-accordion>
+</div>
