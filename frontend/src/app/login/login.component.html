@@ -17,7 +17,7 @@
                     </mat-form-field> 
                     <div class="btn-layout">
                         <button [disabled] = "loginForm.invalid" mat-button color="primary" type="submit">Login</button>
-                        <button mat-button color="warn" (click)="navigateReg()" ><span class="reg-msg" >Not Yet Registered? </span> Register</button>
+                        <button role="submit" mat-button color="warn" (click)="navigateReg()" ><span class="reg-msg" >Not Yet Registered? </span> Register</button>
                     </div>
                 </form>  
             </div>
