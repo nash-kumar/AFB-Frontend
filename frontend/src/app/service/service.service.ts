@@ -31,6 +31,7 @@ export class ServiceService {
   }
 
   public getUsers(){
-    return this.http.get<Tile[]>('http://localhost:4101/users/list').map((data) => {return data})
+    let url = AppSettings.BASE_URL + AppSettings.USER_LIST ;
+    return this.http.get<Tile[]>(url).map((data) => {return data})
   }
 }

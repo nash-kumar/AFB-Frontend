@@ -30,7 +30,7 @@ export class SearchComponent implements OnInit{
     
         console.log("response",response);
         this.success= true;
-        let a = response.user;
+        let a = response.result;
         this.tiles = a;
         // this.tiles = response.user;
       
