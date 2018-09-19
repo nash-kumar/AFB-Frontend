@@ -40,6 +40,7 @@
     margin-top: 5px;
     
 }
+
 .inp-1,.inp-2,.inp-4,.inp-6,.inp-8,.inp-5{
     width: 48%;
     
@@ -85,6 +86,10 @@
       margin-top: 60px; 
       text-align: justify;
       text-justify: inter-word;
+  }
+  .swal-model{
+      
+      border: 3px solid black;
   }
 
 

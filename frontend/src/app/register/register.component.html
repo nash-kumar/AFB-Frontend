@@ -21,7 +21,7 @@
           Accionite!</span></h1>
       <div class="div-1">
         <mat-form-field class="inp-1">
-          <input matInput placeholder="First Name" formControlName="fname" >
+          <input matInput placeholder="First Name" formControlName="fname">
           <mat-error *ngIf="!registerForm.hasError('pattern')">
             Enter <strong>valid </strong>Name
           </mat-error>
@@ -35,7 +35,7 @@
       </div>
       <div class="div-2">
         <mat-form-field class="inp-3">
-          <input matInput placeholder="Email" formControlName="email" >
+          <input matInput placeholder="Email" formControlName="Email" >
           
           <mat-error *ngIf="!registerForm.hasError('pattern')">
             Enter <strong>valid </strong>Email Id
@@ -81,9 +81,9 @@
           <mat-radio-button  value="2"> Female </mat-radio-button>
         </mat-radio-group>
       </div>
-      <button mat-fab color="warn" class="btn-2" (click)="navigateLogin()" > <mat-icon >
+      <button mat-fab color="warn" class="btn-2" (click)="navigateLogin1()" > <mat-icon >
           keyboard_arrow_left</mat-icon> </button>
-      <button mat-button color="primary" class="btn-1" style="margin-left:300px; font-size: 20px;" type="submit" [disabled]="registerForm.invalid" (click)="navigateLogin()" >Register</button>
+      <button mat-button color="primary" role="button" class="btn-1" style="margin-left:300px; font-size: 20px;" type="submit" [disabled]="registerForm.invalid" (click)="navigateLogin()" >Register</button>
     </div>
 
 

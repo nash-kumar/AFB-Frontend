@@ -4,22 +4,24 @@
         <div class="flex-layout">
             <div class="card-layout">
                 <h1>Welcome <span class="red">Accionite</span>!</h1>
-                <form class="login-form-layout" [formGroup] = "loginForm" (ngSubmit) = "onSubmit()">
+                <form class="login-form-layout" [formGroup] = "loginForm">
                     <mat-form-field class="login-full-width">
-                      <input matInput placeholder="Email" type="email" formControlName = "email" required>
+                      <input matInput placeholder="Email" type="email" formControlName="Email" required>
                       <mat-error *ngIf="!loginForm.hasError('email')">
                           Email is <strong>required</strong>
                         </mat-error>                    
                     </mat-form-field>
                     <mat-form-field class="login-full-width">
-                      <input matInput placeholder="Password" type="password" formControlName = "password" required>
+                      <input matInput placeholder="Password" type="password" formControlName="password" required>
                       <mat-error *ngIf="!loginForm.hasError('password')">
                           Password is <strong>required</strong>
                         </mat-error>       
                     </mat-form-field> 
                     <div class="btn-layout">
-                        <button [disabled] = "loginForm.invalid" mat-button color="primary" type="submit" (click)="navigateDash()" >Login</button>
-                        <button mat-button color="warn" (click)="navigateReg()" ><span class="reg-msg" >Not Yet Registered? </span> Register</button>
+
+                        <button [disabled] = "loginForm.invalid" role="button" (click)="onNavDash()" mat-button color="primary" type="submit">Login</button>
+                        <button mat-button color="warn" role="button" (click)="navigateReg() " ><span class="reg-msg" >Not Yet Registered? </span> Register</button>
+
                     </div>
                 </form>  
             </div>
