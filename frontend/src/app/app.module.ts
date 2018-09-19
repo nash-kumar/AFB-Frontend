@@ -12,6 +12,12 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { routes } from './app.router';
+
+import { ServiceService }from './service/service.service';
+import {HttpClientModule} from '@angular/common/http'
+import {MatDialogModule} from "@angular/material";
+import swal from 'sweetalert';
+
 import { SearchComponent } from './search/search.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { SearchPipe } from './search.pipe';
@@ -46,13 +52,15 @@ import { SortPipe } from './sort.pipe';
     MatNativeDateModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
+
+    HttpClientModule,
+    MatDialogModule,
     NgxPaginationModule
-    
   ],
 
     
   
-  providers: [],
+  providers: [ServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
