@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServiceService } from '../service/service.service';
 import { Tile } from '../models/tile';
+import { AuthGaurd } from '../service/auth-gaurd.service';
 
 @Component({
   selector: 'app-search',
@@ -17,18 +18,27 @@ export class SearchComponent implements OnInit{
   password: string;
   gender: string
 
-  constructor(private router:Router, private service: ServiceService){}
+  constructor(private router:Router, private service: ServiceService,private auth: AuthGaurd){}
 
   p: Number = 1;
   panelOpenState = false;
   tiles=[];
   success=false;
+
+  logout(){
+    // let tocken = localStorage.removeItem('isLogin');
+    // if(tocken){
+    //   this.router.navigate(['login']);
+    // }
+    localStorage.removeItem("isLogin");
+    this.router.navigate(['login']);
+  }
   
   userData(){
     this.service.getUsers().subscribe((response :any) => {
     
     
-        console.log("response",response);
+        
         this.success= true;
         let a = response.user;
         this.tiles = a;

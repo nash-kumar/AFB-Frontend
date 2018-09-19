@@ -29,11 +29,11 @@ export class LoginComponent implements OnInit {
   }
 
   onNavDash(){
-    console.log(this.loginForm.value);
+    
     var data = this.loginForm.value;
     const data1 = {email :data.Email ,password :data.password}
     this.service.login(data1).subscribe((response: any) => {
-      console.log("Response", response);
+  
       if(response.success){
         swal("Good job!", "Succesfully Loged In", "success");
         localStorage.setItem('isLogin','true');
@@ -47,9 +47,7 @@ export class LoginComponent implements OnInit {
         swal("Sorry", "Incorrect Login", "error");})
       }
 
-  onSubmit(){
-    console.log(this.loginForm.value['email'], this.loginForm.value['password']);
-  }
+ 
   navigateReg(){
     this.router.navigate(['register']);
   }
