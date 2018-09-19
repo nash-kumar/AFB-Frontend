@@ -22,6 +22,7 @@ import { SearchComponent } from './search/search.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { SearchPipe } from './search.pipe';
 import { SortPipe } from './sort.pipe';
+import { AuthGaurd } from './service/auth-gaurd.service';
 
 
 
@@ -32,7 +33,8 @@ import { SortPipe } from './sort.pipe';
     RegisterComponent,
     SearchComponent,
     SearchPipe,
-    SortPipe
+    SortPipe,
+  
   ],
   imports: [
     BrowserModule,
@@ -59,7 +61,7 @@ import { SortPipe } from './sort.pipe';
 
     
   
-  providers: [ServiceService],
+  providers: [ServiceService,AuthGaurd],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

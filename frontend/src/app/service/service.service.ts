@@ -26,8 +26,5 @@ export class ServiceService {
   public getPost(url,data,key){
     return this.http.post(url, { "data": data }, key)
   }
-  
-  isAuthenticated(){
-    return this.token !=null;
-  }
+
 }

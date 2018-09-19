@@ -1,15 +1,21 @@
 <mat-toolbar color="primary" class="navbar">
   <mat-toolbar-row>
-    <span> <img class="img" src="https://static1.squarespace.com/static/5ab6b93e5b409be7fa331cf1/t/5ac67b8c575d1f09cf1c833c/1535701410823/?format=1500w" alt=""> </span>
+    <button mat-flat-button  class="btn-1">HOME</button>
+    <button mat-flat-button class="btn-2" >FRIENDS</button>
+    <!-- <span> <img class="img" src="https://static1.squarespace.com/static/5ab6b93e5b409be7fa331cf1/t/5ac67b8c575d1f09cf1c833c/1535701410823/?format=1500w" alt=""> </span> -->
     <input type="text" [(ngModel)]="filteredName" placeholder="Search A Fellow Accionite"><mat-icon class="search">search</mat-icon>
+    <button mat-flat-button class="btn-3" >LOGOUT</button>
   </mat-toolbar-row>
-
 </mat-toolbar>
+<div class="head">
+        <img class="img" src="https://static1.squarespace.com/static/5ab6b93e5b409be7fa331cf1/t/5ac67b8c575d1f09cf1c833c/1535701410823/?format=1500w" alt="">
+        <div class="text-1">
+          <p>Your Friends At <span style="color:lightslategrey;font-weight: 500;">Accion Labs</span></p>
+        </div>
+ </div>
 
 <div class="main">
-  <div class="text-1">
-    <p>People You Know At <span style="color:firebrick;">Accion Labs</span></p>
-  </div>
+ 
   <mat-accordion>
     <mat-expansion-panel class="grid" (opened)="panelOpenState = true" (closed)="panelOpenState = false" *ngFor="let tile of tiles | paginate: { itemsPerPage: 9,currentPage: p}|search:filteredName: 'firstname': 'surname'|sort: 'firstname':'surname'">
       <mat-expansion-panel-header>
@@ -21,13 +27,15 @@
         </mat-panel-description>
       </mat-expansion-panel-header>
       <div class="details">
-         Email : <span class="email"> {{tile.email}}</span>
+        Email : <span class="email"> {{tile.email}}</span>
         <span class="bir"> Birthday : <span class="birthday"> {{tile.dob}}</span></span> <br>
-         Phone : <span class="phone"> {{tile.mobile}}</span>
+        Phone : <span class="phone"> {{tile.mobile}}</span>
         <span class="se">Sex : <span class="sex"> {{tile.gender}} </span></span> <br>
         Employee Id : <span class="emp"> {{tile.emp_id}} </span>
       </div>
     </mat-expansion-panel>
-   <div class="page"><pagination-controls (pageChange)="p=$event"></pagination-controls></div>
+    <div class="page">
+      <pagination-controls (pageChange)="p=$event"></pagination-controls>
+    </div>
   </mat-accordion>
 </div>
