@@ -40,11 +40,11 @@ export class LoginComponent implements OnInit {
       }
       }, (err) => {
         swal("Sorry", "Incorrect Login", "error");})
-
+      }
 
   onSubmit(){
     console.log(this.loginForm.value['email'], this.loginForm.value['password']);
-
+  }
 
   
 
