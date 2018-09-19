@@ -24,6 +24,7 @@ import { SearchPipe } from './search.pipe';
 import { SortPipe } from './sort.pipe';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
