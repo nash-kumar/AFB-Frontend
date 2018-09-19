@@ -30,6 +30,7 @@ export class RegisterComponent implements OnInit {
       "phone": [null, Validators.compose([Validators.required, Validators.pattern('^[0-9]{10}$')])],
       "date": [null , Validators.required],
       "pass": [null,Validators.required],
+      "gender": [null, Validators.required],
       "emp": [null, Validators.compose([Validators.required, Validators.pattern('^[0-9]{4}')])]
     })
   

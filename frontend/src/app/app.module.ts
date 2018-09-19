@@ -25,6 +25,7 @@ import { SortPipe } from './sort.pipe';
 import { HomePageComponent } from './home-page/home-page.component';
 import {MatMenuModule} from '@angular/material/menu';
 
+import { AuthGaurd } from './service/auth-gaurd.service';
 
 
 
@@ -61,7 +62,7 @@ import {MatMenuModule} from '@angular/material/menu';
 
     
   
-  providers: [ServiceService],
+  providers: [ServiceService,AuthGaurd],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

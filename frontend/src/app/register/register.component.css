@@ -14,7 +14,7 @@
     background-position: top;
     margin: 0;
     margin-top: 2.5px;
-    height: 95vh; 
+    height: 90vh; 
     clip-path: polygon(0 0, 100% 0,100% 85vh, 0 100%);
     background-image: linear-gradient(to right bottom,rgba(219, 9, 9, 0.8), rgba(51, 51, 51, 0.8)),
     url("https://images.unsplash.com/photo-1527664557558-a2b352fcf203?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4341976025ae49162643ccdb47a72a4d&auto=format&fit=crop&w=1051&q=80");
