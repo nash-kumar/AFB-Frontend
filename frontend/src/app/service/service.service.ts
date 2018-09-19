@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
-import { AppSettings } from '../app.settings'
+import { AppSettings } from '../app.settings';
+import { Tile } from '../models/tile';
+import 'rxjs/add/operator/map';
 import { Router } from '@angular/router';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -27,4 +30,7 @@ export class ServiceService {
     return this.http.post(url, { "data": data }, key)
   }
 
+  public getUsers(){
+    return this.http.get<Tile[]>('http://localhost:4101/users/list').map((data) => {return data})
+  }
 }

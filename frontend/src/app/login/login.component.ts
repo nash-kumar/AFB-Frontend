@@ -45,7 +45,6 @@ export class LoginComponent implements OnInit {
       }
       }, (err) => {
         swal("Sorry", "Incorrect Login", "error");})
-
       }
 
   onSubmit(){
