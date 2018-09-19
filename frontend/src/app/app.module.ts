@@ -36,11 +36,7 @@ import {MatMenuModule} from '@angular/material/menu';
     SearchComponent,
     SearchPipe,
     SortPipe,
-<<<<<<< HEAD
     HomePageComponent
-=======
-  
->>>>>>> 51f1c2dcf76b17322c7df6e1b1f4d604a66d5010
   ],
   imports: [
     BrowserModule,
@@ -59,15 +55,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MatNativeDateModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
-<<<<<<< HEAD
     NgxPaginationModule,
     MatMenuModule
-=======
-
-    HttpClientModule,
-    MatDialogModule,
-    NgxPaginationModule
->>>>>>> 51f1c2dcf76b17322c7df6e1b1f4d604a66d5010
   ],
 
     

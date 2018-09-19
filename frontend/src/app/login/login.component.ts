@@ -50,12 +50,9 @@ export class LoginComponent implements OnInit {
   navigateReg(){
     this.router.navigate(['register']);
   }
-<<<<<<< HEAD
   navigateDash(){
     this.router.navigate(['homepage']);
   }
-=======
->>>>>>> 51f1c2dcf76b17322c7df6e1b1f4d604a66d5010
 
 
  
