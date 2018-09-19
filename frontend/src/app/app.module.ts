@@ -16,6 +16,9 @@ import { SearchComponent } from './search/search.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { SearchPipe } from './search.pipe';
 import { SortPipe } from './sort.pipe';
+import { HomePageComponent } from './home-page/home-page.component';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 
 @NgModule({
@@ -25,7 +28,8 @@ import { SortPipe } from './sort.pipe';
     RegisterComponent,
     SearchComponent,
     SearchPipe,
-    SortPipe
+    SortPipe,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
@@ -44,8 +48,8 @@ import { SortPipe } from './sort.pipe';
     MatNativeDateModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
-    NgxPaginationModule
-    
+    NgxPaginationModule,
+    MatMenuModule
   ],
 
     

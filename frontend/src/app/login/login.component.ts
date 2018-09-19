@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['register']);
   }
   navigateDash(){
-    this.router.navigate(['search']);
+    this.router.navigate(['homepage']);
   }
 
 }
