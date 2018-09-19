@@ -24,6 +24,7 @@ import { SearchPipe } from './search.pipe';
 import { SortPipe } from './sort.pipe';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,8 @@ import { SortPipe } from './sort.pipe';
     RegisterComponent,
     SearchComponent,
     SearchPipe,
-    SortPipe
+    SortPipe,
+  
   ],
   imports: [
     BrowserModule,
