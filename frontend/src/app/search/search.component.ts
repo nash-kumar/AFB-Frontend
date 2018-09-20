@@ -21,10 +21,10 @@ export class SearchComponent implements OnInit{
   constructor(private router:Router, private service: ServiceService,private auth: AuthGaurd){}
 
   p: Number = 1;
-  panelOpenState = false;
   tiles=[];
   success=false;
-
+  filteredName;
+  resultData;
   logout(){
     // let tocken = localStorage.removeItem('isLogin');
     // if(tocken){
@@ -36,21 +36,56 @@ export class SearchComponent implements OnInit{
   
   userData(){
     this.service.getUsers().subscribe((response :any) => {
-    
-    
-        
         this.success= true;
         let a = response.user;
         this.tiles = a;
+        this.resultData = a;
         // this.tiles = response.user;
       
-    })
+    });
 
   }
   
 ngOnInit(){
     this.userData();
+    
   }
+
+  
+
+  onSearch(searchData){
+    let filterData = Object.assign([],this.resultData);
+    this.tiles = this.search(filterData, this.filteredName, 'firstname', 'surname');
+  }
+
+  search(value: any, filterString: string, propName: string, propName2: string): any {
+    
+    if(!value) return [];
+
+    if(!filterString) return value;
+    
+    filterString = filterString.toLowerCase();
+
+    return value.filter( it => {
+      return it[propName].toLowerCase().includes(filterString) || it[propName2].toLowerCase().includes(filterString);
+    });
+
+}
+
+sorted(value: any, fname: any): any {
+  return value.sort((a, b) => {
+    if(a[fname] > b[fname]){
+      return -1;
+    }
+    else{
+      return 1;
+    }
+  });
+}
+
+
+
+
 
 }
 

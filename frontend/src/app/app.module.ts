@@ -20,7 +20,7 @@ import swal from 'sweetalert';
 
 import { SearchComponent } from './search/search.component';
 import {NgxPaginationModule} from 'ngx-pagination';
-import { SearchPipe } from './search.pipe';
+
 import { SortPipe } from './sort.pipe';
 import { AuthGaurd } from './service/auth-gaurd.service';
 
@@ -32,7 +32,7 @@ import { AuthGaurd } from './service/auth-gaurd.service';
     LoginComponent,
     RegisterComponent,
     SearchComponent,
-    SearchPipe,
+  
     SortPipe,
   
   ],
