@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 // export interface Tile {
 //   color: string;
@@ -13,11 +14,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
-  
+
+  onClick() {
+    this.router.navigate(['search']);
+  }
+
+  onHomepage() {
+    this.router.navigate(['homepage']);
+  }
   // tiles: Tile[] = [
   //   {text: '', cols: 2, rows: 2, color: 'lightblue'},
   // ];
