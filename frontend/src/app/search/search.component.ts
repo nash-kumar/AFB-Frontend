@@ -52,5 +52,8 @@ ngOnInit(){
     this.userData();
   }
 
+  onHomepage() {
+    this.router.navigate(['homepage']);
+  }
 }
 

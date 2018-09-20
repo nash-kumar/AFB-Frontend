@@ -1,7 +1,7 @@
 <!-- Navigation bar -->
 <mat-toolbar color="primary" class="navbar">
   <mat-toolbar-row>
-    <button mat-flat-button  class="btn-1">HOME</button>
+    <button mat-flat-button  class="btn-1" (click)="onHomepage()" >HOME</button>
     <button mat-flat-button class="btn-2" >FRIENDS</button>
     <!-- <span> <img class="img" src="https://static1.squarespace.com/static/5ab6b93e5b409be7fa331cf1/t/5ac67b8c575d1f09cf1c833c/1535701410823/?format=1500w" alt=""> </span> -->
     <input type="text" [(ngModel)]="filteredName" placeholder="Search A Fellow Accionite"><mat-icon class="search">search</mat-icon>

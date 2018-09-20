@@ -23,9 +23,6 @@ export class HomePageComponent implements OnInit {
     this.router.navigate(['search']);
   }
 
-  onHomepage() {
-    this.router.navigate(['homepage']);
-  }
   // tiles: Tile[] = [
   //   {text: '', cols: 2, rows: 2, color: 'lightblue'},
   // ];
