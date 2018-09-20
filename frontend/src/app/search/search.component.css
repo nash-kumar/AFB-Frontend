@@ -113,7 +113,7 @@ input:focus{
   .btn-1,.btn-2,.btn-3{
       font-size: 21px;
       background-color:rgba(219, 9, 9, 0.1);
-      
+      padding: 4px 0 ;
       outline: none;
       margin-left: 15px;
   }

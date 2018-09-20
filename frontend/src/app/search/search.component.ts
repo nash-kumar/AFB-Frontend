@@ -33,6 +33,10 @@ export class SearchComponent implements OnInit{
     localStorage.removeItem("isLogin");
     this.router.navigate(['login']);
   }
+
+  toHome(){
+    this.router.navigate(['homepage']);
+  }
   
   userData(){
     this.service.getUsers().subscribe((response :any) => {
@@ -56,6 +60,7 @@ ngOnInit(){
   onSearch(searchData){
     let filterData = Object.assign([],this.resultData);
     this.tiles = this.search(filterData, this.filteredName, 'firstname', 'surname');
+    
   }
 
   search(value: any, filterString: string, propName: string, propName2: string): any {
@@ -69,6 +74,7 @@ ngOnInit(){
     return value.filter( it => {
       return it[propName].toLowerCase().includes(filterString) || it[propName2].toLowerCase().includes(filterString);
     });
+  
 
 }
 

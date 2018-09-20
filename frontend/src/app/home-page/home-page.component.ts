@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 // export interface Tile {
 //   color: string;
@@ -13,9 +14,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
+  logout(){
+    localStorage.removeItem("isLogin");
+    this.router.navigate(['login']);
 
+  }
   ngOnInit() {
+  }
+  toFriends(){
+    this.router.navigate(['search']);
   }
   
   // tiles: Tile[] = [
