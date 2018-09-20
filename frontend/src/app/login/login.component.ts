@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     });
     let tocken = localStorage.getItem('isLogin');
     if(tocken){
-      this.router.navigate(['search']);
+      this.router.navigate(['homepage']);
     }
   }
 
@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
       if(response.success){
         swal("Good job!", "Succesfully Loged In", "success");
         localStorage.setItem('isLogin','true');
-      this.router.navigate(['search']);
+      this.router.navigate(['homepage']);
       }else if(response.success){
         swal("Good job!", "response.message", "success");
       }else{
@@ -54,7 +54,5 @@ export class LoginComponent implements OnInit {
   navigateDash(){
     this.router.navigate(['homepage']);
   }
-
-
  
 }

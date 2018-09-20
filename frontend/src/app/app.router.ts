@@ -9,8 +9,8 @@ export const routes : Routes = [
     {path :'' , component:LoginComponent},
     {path :'login' , component:LoginComponent},
     {path :'register' , component:RegisterComponent},
-    {path: 'homepage', component:HomePageComponent},
-    {path : 'search' , component:SearchComponent,canActivate:[AuthGaurd]},
+    {path: 'homepage', component:HomePageComponent,canActivate:[AuthGaurd]},
+    {path : 'search' , component:SearchComponent},
     {path :'**' , component:LoginComponent}
 ]
 

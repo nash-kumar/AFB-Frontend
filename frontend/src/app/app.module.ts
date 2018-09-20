@@ -57,7 +57,8 @@ import { AuthGaurd } from './service/auth-gaurd.service';
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
     NgxPaginationModule,
-    MatMenuModule
+    MatMenuModule,
+    HttpClientModule
   ],
 
     
