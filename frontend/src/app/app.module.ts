@@ -22,6 +22,9 @@ import { SearchComponent } from './search/search.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 
 import { SortPipe } from './sort.pipe';
+import { HomePageComponent } from './home-page/home-page.component';
+import {MatMenuModule} from '@angular/material/menu';
+
 import { AuthGaurd } from './service/auth-gaurd.service';
 
 
@@ -34,7 +37,7 @@ import { AuthGaurd } from './service/auth-gaurd.service';
     SearchComponent,
   
     SortPipe,
-  
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
@@ -53,10 +56,9 @@ import { AuthGaurd } from './service/auth-gaurd.service';
     MatNativeDateModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
-
-    HttpClientModule,
-    MatDialogModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatMenuModule,
+    HttpClientModule
   ],
 
     
