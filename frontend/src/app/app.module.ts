@@ -21,7 +21,10 @@ import swal from 'sweetalert';
 import { SearchComponent } from './search/search.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 
-import { SortPipe } from './sort.pipe';
+import { HomePageComponent } from './home-page/home-page.component';
+import {MatMenuModule} from '@angular/material/menu';
+
+import { OrderModule } from 'ngx-order-pipe'
 import { AuthGaurd } from './service/auth-gaurd.service';
 
 
@@ -32,10 +35,9 @@ import { AuthGaurd } from './service/auth-gaurd.service';
     LoginComponent,
     RegisterComponent,
     SearchComponent,
-  
-    SortPipe,
-  
+    HomePageComponent
   ],
+
   imports: [
     BrowserModule,
     FormsModule,
@@ -53,15 +55,15 @@ import { AuthGaurd } from './service/auth-gaurd.service';
     MatNativeDateModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
-
+    NgxPaginationModule,
+    MatMenuModule,
     HttpClientModule,
-    MatDialogModule,
-    NgxPaginationModule
+    OrderModule
   ],
-
-    
-  
+ 
   providers: [ServiceService,AuthGaurd],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
+

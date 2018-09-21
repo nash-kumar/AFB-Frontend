@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServiceService } from '../service/service.service';
 import { Tile } from '../models/tile';
@@ -9,14 +9,16 @@ import { AuthGaurd } from '../service/auth-gaurd.service';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
-export class SearchComponent implements OnInit{
+
+export class SearchComponent implements OnInit, AfterViewInit{
+
   firstname: string;
   surname: string;
   mobile: number;
   email: string;
   dob: string;
   password: string;
-  gender: string
+  gender: string;
 
   constructor(private router:Router, private service: ServiceService,private auth: AuthGaurd){}
 
@@ -25,6 +27,7 @@ export class SearchComponent implements OnInit{
   success=false;
   filteredName;
   resultData;
+
   logout(){
     // let tocken = localStorage.removeItem('isLogin');
     // if(tocken){
@@ -33,6 +36,10 @@ export class SearchComponent implements OnInit{
     localStorage.removeItem("isLogin");
     this.router.navigate(['login']);
   }
+
+  toHome(){
+    this.router.navigate(['homepage']);
+  }
   
   userData(){
     this.service.getUsers().subscribe((response :any) => {
@@ -40,22 +47,23 @@ export class SearchComponent implements OnInit{
         let a = response.user;
         this.tiles = a;
         this.resultData = a;
-        // this.tiles = response.user;
-      
+        // this.tiles = response.user;  
     });
 
   }
   
-ngOnInit(){
-    this.userData();
-    
-  }
+  ngOnInit(){
+    this.userData(); 
+    }  
 
-  
+  ngAfterViewInit(){
+      
+  }
 
   onSearch(searchData){
     let filterData = Object.assign([],this.resultData);
     this.tiles = this.search(filterData, this.filteredName, 'firstname', 'surname');
+    
   }
 
   search(value: any, filterString: string, propName: string, propName2: string): any {
@@ -69,6 +77,7 @@ ngOnInit(){
     return value.filter( it => {
       return it[propName].toLowerCase().includes(filterString) || it[propName2].toLowerCase().includes(filterString);
     });
+  
 
 }
 
@@ -81,6 +90,7 @@ sorted(value: any, fname: any): any {
       return 1;
     }
   });
+
 }
 
 
