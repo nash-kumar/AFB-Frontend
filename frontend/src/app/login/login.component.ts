@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.fb.group({
-      Email: ['', Validators.email],
+      Email: [null, Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9._]+$')])],
       password: ['', Validators.required]
     });
     let tocken = localStorage.getItem('isLogin');
@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
   onNavDash(){
     
     var data = this.loginForm.value;
-    const data1 = {email :data.Email ,password :data.password}
+    const data1 = {email :data.Email + "@accionlabs.com",password :data.password}
     this.service.login(data1).subscribe((response: any) => {
   
       if(response.success){

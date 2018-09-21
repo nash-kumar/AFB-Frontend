@@ -36,6 +36,7 @@
       <div class="div-2">
         <mat-form-field class="inp-3">
           <input matInput placeholder="Email" formControlName="Email" >
+          <span matSuffix style="color: firebrick;" >@accionlabs.com</span>
           
           <mat-error *ngIf="!registerForm.hasError('pattern')">
             Enter <strong>valid </strong>Email Id
@@ -53,7 +54,7 @@
           </mat-error>
         </mat-form-field>
         <mat-form-field class="inp-6">
-          <input matInput [matDatepicker]="picker" placeholder="DOB" formControlName="date">
+          <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="DOB" formControlName="date">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
