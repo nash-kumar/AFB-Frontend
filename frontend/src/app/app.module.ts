@@ -21,7 +21,7 @@ import swal from 'sweetalert';
 import { SearchComponent } from './search/search.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 
-import { SortPipe } from './sort.pipe';
+
 import { HomePageComponent } from './home-page/home-page.component';
 import {MatMenuModule} from '@angular/material/menu';
 
@@ -35,8 +35,6 @@ import { AuthGaurd } from './service/auth-gaurd.service';
     LoginComponent,
     RegisterComponent,
     SearchComponent,
-  
-    SortPipe,
     HomePageComponent
   ],
   imports: [
