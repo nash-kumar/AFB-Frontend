@@ -13,8 +13,27 @@
   border: 1px solid white;
 
 }
+.links{
+  position: absolute;
+  right: 150px;
+}
 
+.fb,.web,.ins,.you,.twitter{
   
+  width: 35px;
+  margin:0 5px;
+  margin-top: 10px;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+   
+}
+
+.fb:hover,.web:hover,.ins:hover,.you:hover,.twitter:hover{
+  opacity: 1;
+  border-radius: 30%;
+  padding: 3px; 
+}
+
 
 .hash-tags {
   border:none;
