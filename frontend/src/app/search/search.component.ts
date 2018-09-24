@@ -40,7 +40,7 @@ export class SearchComponent implements OnInit{
     
         
         this.success= true;
-        let a = response.user;
+        let a = response.users;
         this.tiles = a;
         // this.tiles = response.user;
       
