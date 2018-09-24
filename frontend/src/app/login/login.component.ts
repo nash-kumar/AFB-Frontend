@@ -14,7 +14,11 @@ export class LoginComponent implements OnInit {
    Email:String="";
    pass:String="";
    success=false;
-  loginForm: FormGroup;
+   loginForm: FormGroup;
+   name: String;
+   mail;
+
+    
   constructor(private fb: FormBuilder,private router:Router,private service:ServiceService) { }
 
   ngOnInit() {
@@ -33,10 +37,19 @@ export class LoginComponent implements OnInit {
     var data = this.loginForm.value;
     const data1 = {email :data.Email + "@accionlabs.com",password :data.password}
     this.service.login(data1).subscribe((response: any) => {
-      console.log(data);
       if(response.success){
         swal("Good job!", "Succesfully Logged In", "success");
         localStorage.setItem('isLogin','true');
+        this.service.getUsers().subscribe((response :any) => {
+          for(let i = 0; i < response.user.length; i++){
+            this.mail = this.loginForm.value.Email + "@accionlabs.com";
+            if(this.mail === response.user[i].email){
+              this.name = response.user[i].firstname;
+              this.service.sendDataToOtherComponent(this.name);
+            }
+            
+          }
+      });
       this.router.navigate(['homepage']);
       }else if(response.success){
         swal("Good job!", "response.message", "success");
@@ -54,5 +67,7 @@ export class LoginComponent implements OnInit {
   navigateDash(){
     this.router.navigate(['homepage']);
   }
+
+  
  
 }

@@ -130,7 +130,7 @@ p {
   justify-content: center;
 }
 .wrap-content {
-  width: 700px;
+  width: 900px;
   border: none;
   display: flex;
   justify-content: center;
@@ -140,7 +140,7 @@ p {
   text-align: center;
   /* font-family: 'Exo 2', sans-serif; */
   font-size: 20px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 .col1 {
