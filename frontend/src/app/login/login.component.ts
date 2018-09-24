@@ -11,15 +11,15 @@ import swal from 'sweetalert';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-   Email:String="";
-   pass:String="";
-   success=false;
-   loginForm: FormGroup;
-   name: String;
-   mail;
+  Email: String = "";
+  pass: String = "";
+  success = false;
+  loginForm: FormGroup;
+  name: String;
+  mail;
 
-    
-  constructor(private fb: FormBuilder,private router:Router,private service:ServiceService) { }
+
+  constructor(private fb: FormBuilder, private router: Router, private service: ServiceService) { }
 
   ngOnInit() {
     this.loginForm = this.fb.group({
@@ -27,47 +27,46 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required]
     });
     let tocken = localStorage.getItem('isLogin');
-    if(tocken){
+    if (tocken) {
       this.router.navigate(['homepage']);
     }
   }
 
-  onNavDash(){
-    
-    var data = this.loginForm.value;
-    const data1 = {email :data.Email + "@accionlabs.com",password :data.password}
-    this.service.login(data1).subscribe((response: any) => {
-      if(response.success){
-        swal("Good job!", "Succesfully Logged In", "success");
-        localStorage.setItem('isLogin','true');
-        this.service.getUsers().subscribe((response :any) => {
-          for(let i = 0; i < response.user.length; i++){
-            this.mail = this.loginForm.value.Email + "@accionlabs.com";
-            if(this.mail === response.user[i].email){
-              this.name = response.user[i].firstname;
-              this.service.sendDataToOtherComponent(this.name);
-            }
-            
-          }
-      });
-      this.router.navigate(['homepage']);
-      }else if(response.success){
-        swal("Good job!", "response.message", "success");
-      }else{
-        swal("Good job!", "response.message", "success");
-      }
-      }, (err) => {
-        swal("Sorry", "Incorrect Login", "error");})
-      }
+  onNavDash() {
 
- 
-  navigateReg(){
+    var data = this.loginForm.value;
+    const data1 = { email: data.Email + "@accionlabs.com", password: data.password }
+    console.log("data", data1);
+    this.service.login(data1).subscribe((response: any) => {
+      console.log("Response:", response)
+      if (response.success) {
+        this.router.navigate(['homepage']);
+        swal("Good job!", "Succesfully Logged In", "success");
+        localStorage.setItem('isLogin', 'true');
+        this.service.user = response.user.firstname + ' ' + response.user.surname;
+        // this.service.getUsers().subscribe((response: any) => {
+        //   for (let i = 0; i < response.user.length; i++) {
+        //     this.mail = this.loginForm.value.Email + "@accionlabs.com";
+        //     if (this.mail === response.user[i].email) {
+        //       this.name = response.user[i].firstname;
+        // this.service.sendDataToOtherComponent(response.user.firstname);
+        //     }
+
+        //   }
+        // });
+      } else {
+        swal("Something is fishy!!!", "Try with correct credentials", "error");
+      }
+    }, (err) => {
+      swal("Sorry", "Incorrect Login", "error");
+    })
+  }
+
+
+  navigateReg() {
     this.router.navigate(['register']);
   }
-  navigateDash(){
+  navigateDash() {
     this.router.navigate(['homepage']);
   }
-
-  
- 
 }
