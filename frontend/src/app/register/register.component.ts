@@ -12,14 +12,7 @@ export class RegisterComponent implements OnInit {
   
   
   registerForm: FormGroup;
-  firstname:string='';
-  lastname:String='';
-  Email;
-  phone:Number;
-  date:Date;
-  pass;
-  emp;
-  gender:String='';
+ 
 
   minDate = new Date(1950, 0, 1);
   maxDate = new Date(2000, 0, 1);

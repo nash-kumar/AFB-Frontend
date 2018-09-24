@@ -67,8 +67,8 @@
     font-size: 50px;
     font-weight: 400;
     letter-spacing: 15px;
-    
     margin-right: 30px; 
+    animation: fadeIn 2s;
   }
   
   .heading-primary-sub{
@@ -76,6 +76,7 @@
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 9px;
+    animation: fadeIn 2s;
   }
 
   .content{
@@ -86,7 +87,15 @@
       margin-top: 60px; 
       text-align: justify;
       text-justify: inter-word;
+      animation: fadeIn 2s;
   }
+
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  } 
+  
   .swal-model{
       
       border: 3px solid black;
