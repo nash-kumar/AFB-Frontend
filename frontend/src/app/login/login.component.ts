@@ -11,15 +11,15 @@ import swal from 'sweetalert';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-   Email:String="";
-   pass:String="";
-   success=false;
-   loginForm: FormGroup;
-   name: String;
-   mail;
+  Email: String = "";
+  pass: String = "";
+  success = false;
+  loginForm: FormGroup;
+  name: String;
+  mail;
 
-    
-  constructor(private fb: FormBuilder,private router:Router,private service:ServiceService) { }
+
+  constructor(private fb: FormBuilder, private router: Router, private service: ServiceService) { }
 
   ngOnInit() {
     this.loginForm = this.fb.group({
@@ -27,18 +27,22 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required]
     });
     let tocken = localStorage.getItem('isLogin');
-    if(tocken){
+    if (tocken) {
       this.router.navigate(['homepage']);
     }
   }
 
-  onNavDash(){
-    
+  onNavDash() {
+
     var data = this.loginForm.value;
-    const data1 = {email :data.Email + "@accionlabs.com",password :data.password}
+    const data1 = { email: data.Email + "@accionlabs.com", password: data.password }
+    console.log("data", data1);
     this.service.login(data1).subscribe((response: any) => {
-      if(response.success){
+      console.log("Response:", response)
+      if (response.success) {
+        this.router.navigate(['homepage']);
         swal("Good job!", "Succesfully Logged In", "success");
+
         localStorage.setItem('isLogin','true');
         this.service.getUsers().subscribe((response :any) => {
           for(let i = 0; i < response.user.length; i++){
@@ -60,16 +64,15 @@ export class LoginComponent implements OnInit {
       }
       }, (err) => {
         swal("Sorry", "Incorrect Login", "error");})
-      }
 
- 
-  navigateReg(){
+      }
+   
+
+
+  navigateReg() {
     this.router.navigate(['register']);
   }
-  navigateDash(){
+  navigateDash() {
     this.router.navigate(['homepage']);
   }
-
-  
- 
 }
