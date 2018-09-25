@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl, NgForm, FormGroupDirective } from '@angular/forms';
+import {ErrorStateMatcher} from '@angular/material/core';
 import { Router } from '@angular/router';
 import { ServiceService } from '../service/service.service';
 import swal from 'sweetalert';
@@ -11,6 +12,7 @@ import swal from 'sweetalert';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
   Email: String = "";
   pass: String = "";
   success = false;
@@ -18,14 +20,18 @@ export class LoginComponent implements OnInit {
   name: String;
   mail;
 
+   matcher = new MyErrorStateMatcher();
 
   constructor(private fb: FormBuilder, private router: Router, private service: ServiceService) { }
 
   ngOnInit() {
     this.loginForm = this.fb.group({
-      Email: [null, Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9._]+$')])],
-      password: ['', Validators.required]
+      Email: new FormControl('', [Validators.required, Validators.pattern(/^[a-z0-9_.]+$/i)]),
+      password: new FormControl('', Validators.required)
     });
+
+   
+
     let tocken = localStorage.getItem('isLogin');
     if (tocken) {
       this.router.navigate(['homepage']);
@@ -35,7 +41,7 @@ export class LoginComponent implements OnInit {
   onNavDash() {
 
     var data = this.loginForm.value;
-    const data1 = { email: data.Email + "@accionlabs.com", password: data.password }
+    const data1 = {"user":{ email: data.Email + "@accionlabs.com", password: data.password }}
     console.log("data", data1);
     this.service.login(data1).subscribe((response: any) => {
       console.log("Response:", response)
@@ -74,5 +80,12 @@ export class LoginComponent implements OnInit {
   }
   navigateDash() {
     this.router.navigate(['homepage']);
+  }
+}
+
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
   }
 }

@@ -6,14 +6,14 @@
                 <h1>Welcome <span class="red">Accionite</span>!</h1>
                 <form class="login-form-layout" [formGroup] = "loginForm">
                     <mat-form-field class="login-full-width">
-                      <input matInput placeholder="Email" type="email" formControlName="Email" required>
+                      <input matInput placeholder="Email" type="email" formControlName="Email" [errorStateMatcher]="matcher">
                       <span matSuffix style="color: firebrick;" >@accionlabs.com</span>
-                      <mat-error *ngIf="!loginForm.hasError('email')">
-                          Email is <strong>required</strong>
-                        </mat-error>                    
+                      <mat-error *ngIf="!loginForm.hasError('Email')  && !loginForm.hasError('required')">
+                          Please enter a valid email address
+                        </mat-error>                  
                     </mat-form-field>
                     <mat-form-field class="login-full-width">
-                      <input matInput placeholder="Password" type="password" formControlName="password" required>
+                      <input matInput placeholder="Password" type="password" formControlName="password">
                       <mat-error *ngIf="!loginForm.hasError('password')">
                           Password is <strong>required</strong>
                         </mat-error>       
