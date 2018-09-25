@@ -45,6 +45,8 @@ export class LoginComponent implements OnInit {
             this.mail = this.loginForm.value.Email + "@accionlabs.com";
             if(this.mail === response.user[i].email){
               this.name = response.user[i].firstname;
+              localStorage.name = this.name;
+              // localStorage.setItem('name',name);
               this.service.sendDataToOtherComponent(this.name);
             }
             

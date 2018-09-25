@@ -16,9 +16,11 @@ import { ServiceService } from '../service/service.service';
 export class HomePageComponent implements OnInit {
 
   loggedInUserName: String;
+  userName: String;
 
   constructor(private router:Router, private service: ServiceService) { }
   logout(){
+    localStorage.removeItem("name");
     localStorage.removeItem("isLogin");
     this.router.navigate(['login']);
 
@@ -31,7 +33,12 @@ export class HomePageComponent implements OnInit {
   }
 
   getData(){
-    this.service.shareDataSubject.subscribe(recievedData => {this.loggedInUserName = recievedData})
+     
+    console.log(this.userName);
+    
+    
+    this.service.shareDataSubject.subscribe(recievedData => {this.userName = recievedData})
+    this.userName = localStorage.getItem('name');
   }
   
   // tiles: Tile[] = [
