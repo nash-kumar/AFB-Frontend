@@ -10,6 +10,7 @@ import { Observable, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class ServiceService {
+  public user: any;
 
   
 shareDataSubject = new Subject<any>();
