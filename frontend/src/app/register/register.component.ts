@@ -36,26 +36,11 @@ export class RegisterComponent implements OnInit {
    
   }
 
-  // navigateLogin(){
-  //   this.router.navigate(['login']);
-  //   console.log("added");
-  //   const data = { firstname: this.firstname, surname: this.lastname , mobile:this.phone ,email:this.Email, dob :this.date, password:this.pass ,emp_id:this.emp,gender:this.gender };
-  //   this.service.register(data).subscribe((response: any) => {
-  //   console.log("Response", response);
-  //   if (response.success) {
-  //   alert(response.message);
-  //   } else {
-  //   alert(response.error);
-  //   }
-    
-  //   })
-  
   navigateLogin() {
     
     var data = this.registerForm.value;
     const data1 = {firstname: data.fname, surname: data.lname, mobile: data.phone, email: data.Email + "@accionlabs.com", dob: data.date, password: data.pass, emp_id: data.emp, gender: data.gender}
     this.service.register(data1).subscribe((response: any) => {
-    console.log("Response", response);
     if(response.success){
       swal("Congrats!!", " You are a member of Accion Labs", "success");;
     this.router.navigate(['login']);
