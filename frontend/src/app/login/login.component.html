@@ -7,6 +7,7 @@
                 <form class="login-form-layout" [formGroup] = "loginForm">
                     <mat-form-field class="login-full-width">
                       <input matInput placeholder="Email" type="email" formControlName="Email" required>
+                       <span matSuffix style="color: firebrick;" >@accionlabs.com</span> 
                       <mat-error *ngIf="!loginForm.hasError('email')">
                           Email is <strong>required</strong>
                         </mat-error>                    

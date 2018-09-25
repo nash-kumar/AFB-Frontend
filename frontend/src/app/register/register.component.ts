@@ -12,21 +12,18 @@ export class RegisterComponent implements OnInit {
   
   
   registerForm: FormGroup;
-  firstname:string='';
-  lastname:String='';
-  Email;
-  phone:Number;
-  date:String='';
-  pass;
-  emp;
-  gender:String='';
+ 
+
+  minDate = new Date(1950, 0, 1);
+  maxDate = new Date(2000, 0, 1);
+
     constructor(private fb:FormBuilder,private router:Router,private service: ServiceService) { 
 
   
     this.registerForm = fb.group({
       "fname": [null, Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z]+$')])],
       "lname": [null, Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z]+$')])],
-      "Email": [null, Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9._]+@accionlabs.com$')])],
+      "Email": [null, Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9._]+$')])],
       "phone": [null, Validators.compose([Validators.required, Validators.pattern('^[0-9]{10}$')])],
       "date": [null , Validators.required],
       "pass": [null,Validators.required],
@@ -56,7 +53,7 @@ export class RegisterComponent implements OnInit {
   navigateLogin() {
     
     var data = this.registerForm.value;
-    const data1 = {firstname: data.fname, surname: data.lname, mobile: data.phone, email: data.Email, dob: data.date, password: data.pass, emp_id: data.emp, gender: data.gender}
+    const data1 = {firstname: data.fname, surname: data.lname, mobile: data.phone, email: data.Email + "@accionlabs.com", dob: data.date, password: data.pass, emp_id: data.emp, gender: data.gender}
     this.service.register(data1).subscribe((response: any) => {
     console.log("Response", response);
     if(response.success){

@@ -11,47 +11,48 @@ import swal from 'sweetalert';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-   Email:String="";
-   pass:String="";
-   success=false;
+  Email: String = "";
+  pass: String = "";
+  success = false;
   loginForm: FormGroup;
-  constructor(private fb: FormBuilder,private router:Router,private service:ServiceService) { }
+  constructor(private fb: FormBuilder, private router: Router, private service: ServiceService) { }
 
   ngOnInit() {
     this.loginForm = this.fb.group({
-      Email: ['', Validators.email],
+      Email: [null, Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9._]+$')])],
       password: ['', Validators.required]
     });
     let tocken = localStorage.getItem('isLogin');
-    if(tocken){
-      this.router.navigate(['search']);
+    if (tocken) {
+      this.router.navigate(['homepage']);
     }
   }
 
-  onNavDash(){
     
-    var data = this.loginForm.value;
-    const data1 = {email :data.Email ,password :data.password}
-    this.service.login(data1).subscribe((response: any) => {
-  
-      if(response.success){
-        swal("Good job!", "Succesfully Loged In", "success");
-        localStorage.setItem('isLogin','true');
-      this.router.navigate(['search']);
-      }else if(response.success){
-        swal("Good job!", "response.message", "success");
-      }else{
-        swal("Good job!", "response.message", "success");
-      }
-      }, (err) => {
-        swal("Sorry", "Incorrect Login", "error");})
-      }
 
+  onNavDash() {
+
+    var data = this.loginForm.value;
+    const data1 = {"user":{email :data.Email + "@accionlabs.com",password :data.password}}
+    this.service.login(data1).subscribe((response: any) => {
+      console.log(data);
+      if(response.success){
+        swal("Good job!", "Succesfully Logged In", "success");
+        localStorage.setItem('isLogin','true');
+      this.router.navigate(['homepage']);
+      }else{
+        swal("sorry!", "Incorrect", "error");
+      }
+    } ,(err) => {
+      swal("Sorry", "Incorrect Login", "error");})
+    }
  
-  navigateReg(){
+
+  navigateReg() {
     this.router.navigate(['register']);
   }
-
-
+  navigateDash() {
+    this.router.navigate(['homepage']);
+  }
  
 }
