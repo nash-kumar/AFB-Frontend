@@ -34,6 +34,7 @@ export class SearchComponent implements OnInit, AfterViewInit{
     //   this.router.navigate(['login']);
     // }
     localStorage.removeItem("isLogin");
+    localStorage.removeItem("name");
     this.router.navigate(['login']);
   }
 

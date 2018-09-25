@@ -42,25 +42,31 @@ export class LoginComponent implements OnInit {
       if (response.success) {
         this.router.navigate(['homepage']);
         swal("Good job!", "Succesfully Logged In", "success");
-        localStorage.setItem('isLogin', 'true');
-        this.service.user = response.user.firstname + ' ' + response.user.surname;
-        // this.service.getUsers().subscribe((response: any) => {
-        //   for (let i = 0; i < response.user.length; i++) {
-        //     this.mail = this.loginForm.value.Email + "@accionlabs.com";
-        //     if (this.mail === response.user[i].email) {
-        //       this.name = response.user[i].firstname;
-        // this.service.sendDataToOtherComponent(response.user.firstname);
-        //     }
 
-        //   }
-        // });
-      } else {
-        swal("Something is fishy!!!", "Try with correct credentials", "error");
+        localStorage.setItem('isLogin','true');
+        this.service.getUsers().subscribe((response :any) => {
+          for(let i = 0; i < response.user.length; i++){
+            this.mail = this.loginForm.value.Email + "@accionlabs.com";
+            if(this.mail === response.user[i].email){
+              this.name = response.user[i].firstname;
+              localStorage.name = this.name;
+              // localStorage.setItem('name',name);
+              this.service.sendDataToOtherComponent(this.name);
+            }
+            
+          }
+      });
+      this.router.navigate(['homepage']);
+      }else if(response.success){
+        swal("Good job!", "response.message", "success");
+      }else{
+        swal("Good job!", "response.message", "success");
       }
-    }, (err) => {
-      swal("Sorry", "Incorrect Login", "error");
-    })
-  }
+      }, (err) => {
+        swal("Sorry", "Incorrect Login", "error");})
+
+      }
+   
 
 
   navigateReg() {

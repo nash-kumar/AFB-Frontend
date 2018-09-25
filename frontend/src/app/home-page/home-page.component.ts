@@ -12,11 +12,11 @@ import { log } from 'util';
 export class HomePageComponent implements OnInit {
 
   loggedInUserName: String;
+  userName: String;
 
-  constructor(private router:Router, private service: ServiceService) { 
-  }
-  
-  logout() {
+  constructor(private router:Router, private service: ServiceService) { }
+  logout(){
+    localStorage.removeItem("name");
     localStorage.removeItem("isLogin");
     this.router.navigate(['login']);
 
@@ -31,7 +31,9 @@ export class HomePageComponent implements OnInit {
   }
 
   getData(){
-    this.service.shareDataSubject.subscribe(recievedData => {this.loggedInUserName = recievedData});
+    
+    this.service.shareDataSubject.subscribe(recievedData => {this.userName = recievedData})
+    this.userName = localStorage.getItem('name');
   }
 
 }
