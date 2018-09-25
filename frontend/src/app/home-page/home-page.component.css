@@ -43,13 +43,12 @@
   color: white;
   letter-spacing: 5px;
   word-spacing: 10px;
-  /* font-family: 'Exo 2', sans-serif; */
-  /* display: flex; */
   float: left;
   padding: 20px;
   margin: 8% 80px;
   font-size: 40px;
   flex-direction: column;
+  text-transform: capitalize;
 }
 
 .name{
