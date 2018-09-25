@@ -11,7 +11,7 @@ import { log } from 'util';
 
 export class HomePageComponent implements OnInit {
 
-  loggedInUserName: String;
+  
   userName: String;
 
   constructor(private router:Router, private service: ServiceService) { }

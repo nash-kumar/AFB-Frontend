@@ -24,6 +24,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { HomePageComponent } from './home-page/home-page.component';
 import {MatMenuModule} from '@angular/material/menu';
 
+
 import { OrderModule } from 'ngx-order-pipe'
 import { AuthGaurd } from './service/auth-gaurd.service';
 
@@ -58,7 +59,8 @@ import { AuthGaurd } from './service/auth-gaurd.service';
     NgxPaginationModule,
     MatMenuModule,
     HttpClientModule,
-    OrderModule
+    OrderModule,
+    
   ],
  
   providers: [ServiceService,AuthGaurd],
