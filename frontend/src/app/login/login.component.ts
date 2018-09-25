@@ -42,7 +42,6 @@ export class LoginComponent implements OnInit {
 
     var data = this.loginForm.value;
     const data1 = {"user":{ email: data.Email + "@accionlabs.com", password: data.password }}
-    console.log("data", data1);
     this.service.login(data1).subscribe((response: any) => {
       if (response.success) {
         this.router.navigate(['homepage']);
