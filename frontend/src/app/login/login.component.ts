@@ -15,6 +15,10 @@ export class LoginComponent implements OnInit {
   pass: String = "";
   success = false;
   loginForm: FormGroup;
+  name: String;
+  mail;
+
+
   constructor(private fb: FormBuilder, private router: Router, private service: ServiceService) { }
 
   ngOnInit() {
@@ -28,25 +32,42 @@ export class LoginComponent implements OnInit {
     }
   }
 
-    
-
   onNavDash() {
 
     var data = this.loginForm.value;
-    const data1 = {"user":{email :data.Email + "@accionlabs.com",password :data.password}}
+    const data1 = {"user":{ email: data.Email + "@accionlabs.com", password: data.password }}
+    console.log("data", data1);
     this.service.login(data1).subscribe((response: any) => {
-      console.log(data);
-      if(response.success){
+      console.log("Response:", response)
+      if (response.success) {
+        this.router.navigate(['homepage']);
         swal("Good job!", "Succesfully Logged In", "success");
+
         localStorage.setItem('isLogin','true');
+        this.service.getUsers().subscribe((response :any) => {
+          for(let i = 0; i < response.user.length; i++){
+            this.mail = this.loginForm.value.Email + "@accionlabs.com";
+            if(this.mail === response.user[i].email){
+              this.name = response.user[i].firstname;
+              localStorage.name = this.name;
+              // localStorage.setItem('name',name);
+              this.service.sendDataToOtherComponent(this.name);
+            }
+            
+          }
+      });
       this.router.navigate(['homepage']);
+      }else if(response.success){
+        swal("Good job!", "something is fishy", "success");
       }else{
-        swal("sorry!", "Incorrect", "error");
+        swal("Sorry!", "Incorrect ", "error");
       }
-    } ,(err) => {
-      swal("Sorry", "Incorrect Login", "error");})
-    }
- 
+      }, (err) => {
+        swal("Sorry", "Incorrect Login", "error");})
+
+      }
+   
+
 
   navigateReg() {
     this.router.navigate(['register']);

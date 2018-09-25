@@ -34,6 +34,7 @@ export class SearchComponent implements OnInit, AfterViewInit{
     //   this.router.navigate(['login']);
     // }
     localStorage.removeItem("isLogin");
+    localStorage.removeItem("name");
     this.router.navigate(['login']);
   }
 
@@ -44,7 +45,7 @@ export class SearchComponent implements OnInit, AfterViewInit{
   userData(){
     this.service.getUsers().subscribe((response :any) => {
         this.success= true;
-        let a = response.users;
+        let a = response.user;
         this.tiles = a;
         this.resultData = a;
         // this.tiles = response.user;  
