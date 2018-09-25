@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
   onNavDash() {
 
     var data = this.loginForm.value;
-    const data1 = {"user":{ email: data.Email + "@accionlabs.com", password: data.password }}
+    const data1 = { email: data.Email + "@accionlabs.com", password: data.password }
     console.log("data", data1);
     this.service.login(data1).subscribe((response: any) => {
       console.log("Response:", response)
