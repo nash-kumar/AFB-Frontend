@@ -21,13 +21,13 @@
           Accionite!</span></h1>
       <div class="div-1">
         <mat-form-field class="inp-1">
-          <input matInput placeholder="First Name" formControlName="fname">
-          <mat-error *ngIf="!registerForm.hasError('pattern')">
-            Enter <strong>valid </strong>Name
+          <input matInput placeholder="First Name" formControlName="fname" [errorStateMatcher]="matcher">
+          <mat-error *ngIf="!registerForm.hasError('required')">
+            Enter <strong>valid</strong> Name
           </mat-error>
         </mat-form-field>
         <mat-form-field class="inp-2">
-          <input matInput placeholder="Last Name" formControlName="lname" >
+          <input matInput placeholder="Last Name" formControlName="lname" [errorStateMatcher]="matcher" >
           <mat-error *ngIf="!registerForm.hasError('pattern')">
             Enter <strong>valid </strong>Name
           </mat-error>
@@ -35,7 +35,7 @@
       </div>
       <div class="div-2">
         <mat-form-field class="inp-3">
-          <input matInput placeholder="Email" formControlName="Email" >
+          <input matInput placeholder="Email" formControlName="Email" [errorStateMatcher]="matcher">
           <span matSuffix style="color: firebrick;" >@accionlabs.com</span>
           
           <mat-error *ngIf="!registerForm.hasError('pattern')">
@@ -48,13 +48,13 @@
       <div class="div-3">
         <mat-form-field class="inp-4">
             <span matPrefix>+91 &nbsp;</span>
-          <input matInput placeholder="Phone Number" formControlName="phone">
+          <input matInput placeholder="Phone Number" formControlName="phone" [errorStateMatcher]="matcher">
           <mat-error *ngIf="!registerForm.hasError('pattern')">
             Enter <strong>valid </strong>Phone Number
           </mat-error>
         </mat-form-field>
         <mat-form-field class="inp-6">
-          <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="DOB" formControlName="date">
+          <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="DOB" formControlName="date" [errorStateMatcher]="matcher">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
@@ -62,13 +62,13 @@
       <div class="div-4">
         
         <mat-form-field class="inp-5">
-          <input matInput placeholder="Password" type="password" formControlName="pass">
+          <input matInput placeholder="Password" type="password" formControlName="pass" [errorStateMatcher]="matcher">
           <mat-error *ngIf="!registerForm.hasError('required')">
             Password is <strong>Required </strong>
           </mat-error>
         </mat-form-field>
         <mat-form-field class="inp-8">
-          <input matInput placeholder="Employee Id" formControlName="emp">
+          <input matInput placeholder="Employee Id" formControlName="emp" [errorStateMatcher]="matcher">
           <mat-error *ngIf="!registerForm.hasError('required')">
              Enter <strong>valid </strong> Employee Id
           </mat-error>
@@ -77,7 +77,7 @@
 
       </div>
       <div class="div-5">
-        <mat-radio-group value="Female" class="inp-7" style="margin-left:35%;" formControlName="gender" >
+        <mat-radio-group value="Female" class="inp-7" style="margin-left:35%;" formControlName="gender">
           <mat-radio-button style="margin-right:5px;" value="Male" > Male </mat-radio-button>
           <mat-radio-button  value="Female"> Female </mat-radio-button>
         </mat-radio-group>
