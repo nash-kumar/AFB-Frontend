@@ -20,6 +20,8 @@ export class LoginComponent implements OnInit {
   name: String;
   mail;
 
+  show = true;
+
    matcher = new MyErrorStateMatcher();
 
   constructor(private fb: FormBuilder, private router: Router, private service: ServiceService) { }
@@ -78,6 +80,11 @@ export class LoginComponent implements OnInit {
   }
   navigateDash() {
     this.router.navigate(['homepage']);
+  }
+
+  onReset(){
+    this.show = false;
+    console.log("clciked");
   }
 }
 

@@ -38,7 +38,6 @@
   animation-name: fadeIn;
 }
 
-
 @keyframes fadeIn {
   0% {opacity: 0;}
   100% {opacity: 1;}
@@ -96,6 +95,33 @@ h1{
   width: 80%;
   margin-bottom: 10px;
 }
+
+.forgot{
+  display: block;
+  margin-left: 265px;
+  margin-top: -25px;
+  padding-bottom: 9px;
+  color: #909090;
+  cursor: pointer;
+}
+
+.forgot:hover{
+  color: firebrick;
+}
+
+.forgotcard{
+  height: 221px;
+  width: 489px;
+  font-size: 20px;
+  margin-top: 25px;
+  font-weight: 300;
+}
+
+.btn{
+  margin-top: 20px;
+}
+
+
 
 @media screen and (max-width:1859px){
   .header{
