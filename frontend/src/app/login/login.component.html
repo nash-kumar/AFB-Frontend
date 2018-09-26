@@ -3,9 +3,9 @@
       
         <div class="flex-layout">
             <div class="card-layout">
-                <h1>Welcome <span class="red">Accionite</span>!</h1>
-                <form class="login-form-layout" [formGroup] = "loginForm">
-                    <mat-form-field class="login-full-width">
+                <h1> <span *ngIf = "show"> Welcome </span><span *ngIf = "!show"> Hey </span><span class="red">Accionite</span>!</h1>
+                <form class="login-form-layout" [formGroup] = "loginForm" *ngIf = "show">
+                    <mat-form-field class="login-full-width" >
                       <input matInput placeholder="Email" type="email" formControlName="Email" [errorStateMatcher]="matcher">
                       <span matSuffix style="color: firebrick;" >@accionlabs.com</span>
                       <mat-error *ngIf="!loginForm.hasError('Email')  && !loginForm.hasError('required')">
@@ -18,15 +18,20 @@
                           Password is <strong>required</strong>
                         </mat-error>       
                     </mat-form-field> 
+                    <a class="forgot" (click) = "onReset()">Forgot password?</a>
+                
                     <div class="btn-layout">
-
                         <button [disabled] = "loginForm.invalid" role="button" (click)="onNavDash()" mat-button color="primary" type="submit">Login</button>
                         <button mat-button color="warn" role="button" (click)="navigateReg() " ><span class="reg-msg" >Not Yet Registered? </span> Register</button>
-
                     </div>
                 </form>  
-            </div>
+                 <div class="forgotcard" *ngIf = "!show">
+                        <p>Check your mail to reset the password</p>
+                        <button mat-stroked-button class="btn">Back</button>
+                    </div>       
+            </div>     
         </div>
+        
     <div class="textbox">
       <div class="heading-primary">
         <span class="heading-primary-main">Accion Friends Book</span>
