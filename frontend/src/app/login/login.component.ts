@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
   onNavDash() {
 
     var data = this.loginForm.value;
-    const data1 = { email: data.Email + "@accionlabs.com", password: data.password }
+    const data1 = {"user":{ email: data.Email + "@accionlabs.com", password: data.password }}
     this.service.login(data1).subscribe((response: any) => {
       if (response.success) {
         this.router.navigate(['homepage']);
@@ -64,9 +64,9 @@ export class LoginComponent implements OnInit {
       });
       this.router.navigate(['homepage']);
       }else if(response.success){
-        swal("Good job!", "response.message", "success");
+        swal("Good job!", "something is fishy", "success");
       }else{
-        swal("Good job!", "response.message", "success");
+        swal("Sorry!", "Incorrect ", "error");
       }
       }, (err) => {
         swal("Sorry", "Incorrect Login", "error");})
@@ -81,11 +81,15 @@ export class LoginComponent implements OnInit {
   navigateDash() {
     this.router.navigate(['homepage']);
   }
+<<<<<<< HEAD
 
   onReset(){
     this.show = false;
     console.log("clciked");
   }
+=======
+ 
+>>>>>>> f56014b3003ab27651f880a19f43f0180ced8acc
 }
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
