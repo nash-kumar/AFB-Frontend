@@ -24,8 +24,8 @@ export class RegisterComponent implements OnInit {
 
   
     this.registerForm = fb.group({
-      fname: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]),
-      lname: new FormControl(null, [Validators.required, Validators.pattern('^[a-zA-Z]+$')]),
+      fname: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]+[a-zA-Z ]+$')]),
+      lname: new FormControl(null, [Validators.required, Validators.pattern('^[a-zA-Z]+[a-zA-Z ]+$')]),
       Email: new FormControl(null, [Validators.required, Validators.pattern('^[a-zA-Z0-9._]+$')]),
       phone: new FormControl(null, [Validators.required, Validators.pattern('^[0-9]{10}$')]),
       date: new FormControl(null , Validators.required),
