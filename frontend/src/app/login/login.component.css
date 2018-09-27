@@ -25,6 +25,8 @@
   font-size: 50px;
   font-weight: 400;
   letter-spacing: 15px;
+  animation-duration: 2s;
+  animation-name: fadeIn;
 }
 
 .heading-primary-sub{
@@ -32,7 +34,14 @@
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 9px;
+  animation-duration: 2s;
+  animation-name: fadeIn;
 }
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+} 
 
 .flex-layout{
   display: flex;
@@ -85,6 +94,40 @@ h1{
 .login-full-width{
   width: 80%;
   margin-bottom: 10px;
+}
+
+.forgot{
+  display: block;
+  margin-left: 265px;
+  margin-top: -25px;
+  padding-bottom: 9px;
+  color: #909090;
+  cursor: pointer;
+}
+
+.forgot:hover{
+  color: firebrick;
+}
+
+.forgotcard{
+  height: 181px;
+  width: 483px;
+  font-size: 23px;
+  margin-top: 70px;
+  font-weight: 300;
+}
+
+.btn{
+  margin-top: 20px;
+}
+
+.mail-icon{
+  display: inline-block;
+  font-size: 35px;
+  opacity: 0.7;
+  margin-right: 15px;
+  position: relative;
+  top:9.5px;
 }
 
 @media screen and (max-width:1859px){
