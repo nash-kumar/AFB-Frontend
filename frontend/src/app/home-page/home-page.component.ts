@@ -27,7 +27,7 @@ export class HomePageComponent implements OnInit {
   }
 
   toFriends(){
-    this.router.navigate(['search']);
+    this.router.navigate(['friends']);
   }
 
   getData(){
