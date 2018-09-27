@@ -26,8 +26,8 @@
                     </div>
                 </form>  
                  <div class="forgotcard" *ngIf = "!show">
-                        <p>Check your mail to reset the password</p>
-                        <button mat-stroked-button class="btn">Back</button>
+                        <p><mat-icon class="mail-icon">mail_outline</mat-icon>Check your mail to reset the password</p>
+                        <button mat-stroked-button color = "warn" class="btn" (click) = "navigateBack()">Back</button>
                     </div>       
             </div>     
         </div>

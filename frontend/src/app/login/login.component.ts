@@ -81,15 +81,15 @@ export class LoginComponent implements OnInit {
   navigateDash() {
     this.router.navigate(['homepage']);
   }
-<<<<<<< HEAD
+
+  navigateBack(){
+    this.show = true;
+  }
 
   onReset(){
     this.show = false;
     console.log("clciked");
   }
-=======
- 
->>>>>>> f56014b3003ab27651f880a19f43f0180ced8acc
 }
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
