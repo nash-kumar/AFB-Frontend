@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
   lastname:String='';
   Email;
   phone:Number;
-  date:String='';
+  date:Date;
   pass;
   emp;
   gender:String='';

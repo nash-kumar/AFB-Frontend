@@ -14,15 +14,18 @@ import { Router } from '@angular/router';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router:Router) { }
+  logout(){
+    localStorage.removeItem("isLogin");
+    this.router.navigate(['login']);
 
+  }
   ngOnInit() {
   }
-
-  onClick() {
+  toFriends(){
     this.router.navigate(['search']);
   }
-
+  
   // tiles: Tile[] = [
   //   {text: '', cols: 2, rows: 2, color: 'lightblue'},
   // ];

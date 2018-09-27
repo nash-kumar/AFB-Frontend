@@ -18,11 +18,13 @@
 
 .hash-tags {
   border:none;
+  
+  font-weight: 300;
   color: white;
   letter-spacing: 5px;
   word-spacing: 10px;
-  font-family: 'Exo 2', sans-serif;
-  display: flex;
+  /* font-family: 'Exo 2', sans-serif; */
+  /* display: flex; */
   float: left;
   padding: 20px;
   margin: 8% 80px;
@@ -30,13 +32,18 @@
   flex-direction: column;
 }
 
+.name{
+  font-weight: 400;
+  color:lightslategray;
+}
+
 p {
   font-size: 20px;
 }
 
 .container-layout{
-  max-width: 100%;
-  background-color: #FCFFF0;
+  max-width:100%;
+  background-color:lightgray;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -53,7 +60,7 @@ p {
 
 .dash-bar {
   font-size: 35px;
-  font-family: 'Exo 2', sans-serif;
+  /* font-family: 'Exo 2', sans-serif; */
 }
 
 
@@ -63,7 +70,7 @@ p {
   padding: 15px 40px;
   margin: 10px;
   font-size: 17px;
-  font-family: 'Exo 2', sans-serif;
+  /* font-family: 'Exo 2', sans-serif; */
   text-transform: uppercase;
   border-radius: 1px;
   border: none;
@@ -89,7 +96,7 @@ p {
   display: flex;
   justify-content: center;
   padding: 30px;
-  font-family: 'Exo 2', sans-serif;
+  /* font-family: 'Exo 2', sans-serif; */
   font-weight: bold 500;
   letter-spacing: 2px;
   font-size: 40px;
@@ -111,7 +118,7 @@ p {
   margin: 10px;
   padding: 40px;
   text-align: center;
-  font-family: 'Exo 2', sans-serif;
+  /* font-family: 'Exo 2', sans-serif; */
   font-size: 20px;
   letter-spacing: 2px;
 }
@@ -165,6 +172,7 @@ input:focus{
 .btn-1,.btn-2,.btn-3{
   font-size: 21px;
   background-color:rgba(219, 9, 9, 0.1);
+  padding: 4px 0 ;
   
   outline: none;
   margin-left: 15px;
@@ -194,7 +202,7 @@ input:focus{
   border: none;
   padding: 30px;
   font-size: 40px;
-  font-family: 'Exo 2', sans-serif;
+  /* font-family: 'Exo 2', sans-serif; */
   text-transform: capitalize;
   letter-spacing: 2px;
 }

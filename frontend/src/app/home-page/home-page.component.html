@@ -1,16 +1,16 @@
 <!-- Navigation Bar -->
 <mat-toolbar color="primary" class="navbar">
   <mat-toolbar-row>
-    <button mat-flat-button  class="btn-1" >HOME</button>
-    <button mat-flat-button class="btn-2" (click)="onClick()" >FRIENDS</button>
+    <button mat-flat-button  class="btn-1">HOME</button>
+    <button mat-flat-button class="btn-2" (click)="toFriends()">FRIENDS</button>
     <!-- <span> <img class="img" src="https://static1.squarespace.com/static/5ab6b93e5b409be7fa331cf1/t/5ac67b8c575d1f09cf1c833c/1535701410823/?format=1500w" alt=""> </span> -->
-    <input type="text" [(ngModel)]="filteredName" placeholder="Search A Fellow Accionite"><mat-icon class="search">search</mat-icon>
-    <button mat-flat-button class="btn-3" >LOGOUT</button>
+    
+    <button mat-flat-button class="btn-3" (click)="logout()" >LOGOUT</button>
   </mat-toolbar-row>
 </mat-toolbar>
 
 <div class="image-layout">
-    <div class="hash-tags">WELCOME TO ACCIONLABS  <p>Trusted Partner To Global Brands</p> </div>
+    <div class="hash-tags">WELCOME TO <span class="name">ACCIONLABS</span>  <p>Trusted Partner To Global Brands</p> </div>
 </div>
 
 
@@ -31,7 +31,7 @@
 <div class="redirect">
   <div class="container-layout">
     <div class="dash-bar">Say Hi to Accionites    </div>
-    <button class="access-btn" (click)="onClick()" >view frinds</button>
+    <button class="access-btn" (click)="toFriends()" >view friends</button>
   </div>
 </div>
 
