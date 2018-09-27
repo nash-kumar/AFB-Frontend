@@ -82,6 +82,10 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['homepage']);
   }
 
+  navigateBack(){
+    this.show = true;
+  }
+
   onReset(){
     this.show = false;
   }

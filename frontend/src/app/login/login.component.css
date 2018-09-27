@@ -110,10 +110,10 @@ h1{
 }
 
 .forgotcard{
-  height: 221px;
-  width: 489px;
-  font-size: 20px;
-  margin-top: 25px;
+  height: 181px;
+  width: 483px;
+  font-size: 23px;
+  margin-top: 70px;
   font-weight: 300;
 }
 
@@ -121,7 +121,14 @@ h1{
   margin-top: 20px;
 }
 
-
+.mail-icon{
+  display: inline-block;
+  font-size: 35px;
+  opacity: 0.7;
+  margin-right: 15px;
+  position: relative;
+  top:9.5px;
+}
 
 @media screen and (max-width:1859px){
   .header{
