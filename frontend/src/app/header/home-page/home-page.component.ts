@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ServiceService } from '../service/service.service';
+import { ServiceService } from '../../service/service.service';
 import { log } from 'util';
 
 @Component({
@@ -15,13 +15,7 @@ export class HomePageComponent implements OnInit {
   userName: String;
 
   constructor(private router:Router, private service: ServiceService) { }
-  logout(){
-    localStorage.removeItem("name");
-    localStorage.removeItem("isLogin");
-    this.router.navigate(['login']);
-
-  }
-
+ 
   ngOnInit() {
     this.getData();
   }
