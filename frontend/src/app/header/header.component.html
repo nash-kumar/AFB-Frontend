@@ -1,7 +1,6 @@
-<!-- Navigation Bar -->
 <mat-toolbar color="primary" class="navbar">
   <mat-toolbar-row>
-    <button mat-flat-button  class="btn-1">HOME</button>
+    <button mat-flat-button  class="btn-1" (click)="toHome()">HOME</button>
     <button mat-flat-button class="btn-2" (click)="toFriends()">FRIENDS</button>
     <!-- <span> <img class="img" src="https://static1.squarespace.com/static/5ab6b93e5b409be7fa331cf1/t/5ac67b8c575d1f09cf1c833c/1535701410823/?format=1500w" alt=""> </span> -->
     <div class="links">
@@ -14,54 +13,3 @@
     <button mat-flat-button class="btn-3" (click)="logout()" >LOGOUT</button>
   </mat-toolbar-row>
 </mat-toolbar>
-
-<div class="image-layout">
-
-    <div class="hash-tags">Hi {{userName}}, WELCOME TO <span class="name">ACCIONLABS</span>  <p>Trusted Partner To Global Brands</p> </div>
-
-</div>
-
-
-<!-- team container -->
-<div class="container">`
-  <div class="about-us">
-    About us
-  </div>
-  <div class="wrap-about">
-    <div class="wrap-content">
-      At Accion Labs, we work with Technology organizations of all sizes from small 
-      startups to established enterprises across the globe who are looking 
-      to harness power of emerging technologies to add value to their businesses.
-      <br>
-      <br>
-      We Are A Team Of Engineers, Designers, Thinkers, Product Managers, Problem Solvers And More. We Are Bound By Our Commitment To Help Teams Succeed And Our Culture Of Innovation.
-    </div>
-  </div>
-
-
-<div class="redirect">
-  <div class="container-layout">
-    <div class="dash-bar">Find Your Co-Workers Here!</div>
-    <button class="access-btn" (click)="toFriends()" >view friends</button>
-  </div>
-</div>
-
-<div class="col1">
-  <div class="copyright">
-    <p>@ Copyright 2018, Accion Labs, Inc.</p>
-  </div>
-    
-  </div> 
-    <!-- <mat-grid-list cols="4" rowHeight="100px" class="grid-wrp">
-      <mat-grid-tile
-          *ngFor="let tile of tiles"
-          [colspan]="tile.cols"
-          [style.background]="tile.color">
-        <div class="wrap-contact">
-          {{tile.conatct}}
-        </div>
-      </mat-grid-tile>
-    </mat-grid-list> --> 
-</div>
-
-

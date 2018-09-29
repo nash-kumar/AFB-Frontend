@@ -1,9 +1,10 @@
 import { Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { SearchComponent } from './search/search.component';
-import { HomePageComponent } from './home-page/home-page.component';
+import { SearchComponent } from './header/search/search.component';
+import { HomePageComponent } from './header/home-page/home-page.component';
 import { AuthGaurd } from './service/auth-gaurd.service';
+
 
 export const routes : Routes = [
     {path :'' , component:LoginComponent},

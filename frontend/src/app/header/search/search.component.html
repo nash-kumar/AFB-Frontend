@@ -1,17 +1,7 @@
-<!-- Navigation bar -->
-<mat-toolbar color="primary" class="navbar">
-  <mat-toolbar-row>
-    <button mat-flat-button  class="btn-1" (click)="toHome()" >HOME</button>
-    <button mat-flat-button class="btn-2" >FRIENDS</button>
-    <!-- <span> <img class="img" src="https://static1.squarespace.com/static/5ab6b93e5b409be7fa331cf1/t/5ac67b8c575d1f09cf1c833c/1535701410823/?format=1500w" alt=""> </span> -->
-    <input type="text" [(ngModel)]="filteredName" (input) = "onSearch($event)" placeholder="Search A Fellow Accionite"><mat-icon class="search">search</mat-icon>
-    <button mat-flat-button class="btn-3" (click)="logout()" >LOGOUT</button>
-  </mat-toolbar-row>
-</mat-toolbar>
-<!-- End Navigation bar -->
-
-
+<app-header></app-header>
 <div class="head">
+   <div> <input type="text" [(ngModel)]="filteredName" (input) = "onSearch($event)" placeholder="Search A Fellow Accionite"><mat-icon class="search">search</mat-icon></div>
+
         <img class="img" src="https://static1.squarespace.com/static/5ab6b93e5b409be7fa331cf1/t/5ac67b8c575d1f09cf1c833c/1535701410823/?format=1500w" alt="">
         <div class="text-1">
           <p>Your Friends At <span style="color:lightslategrey;font-weight: 500;">Accion Labs</span></p>
