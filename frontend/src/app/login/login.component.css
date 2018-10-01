@@ -1,6 +1,8 @@
 .main{
   padding: 30px;
 }
+
+/* Header */
 .header{
   height: 90vh;
    background-image: linear-gradient(to right bottom,rgba(219, 9, 9, 0.8), rgba(51, 51, 51, 0.8)), url("https://images.unsplash.com/photo-1525248152312-434c15a82f37?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=278e9355f4294b036c0ad9d60750e752&auto=format&fit=crop&w=1980&q=80"); 
@@ -130,6 +132,8 @@ h1{
   top:9.5px;
 }
 
+
+/* [Resposive] */
 @media screen and (max-width:1859px){
   .header{
     width: 100%;
@@ -174,7 +178,7 @@ h1{
   }
 
   .flex-layout{
-    width: 95%;
+    width: 100%;
   }
 }
 
@@ -187,6 +191,19 @@ h1{
   .flex-layout{
     width: 760px;
   }
+}
+
+
+@media screen and (max-width:760px) {
+    [class*="card-layout"]{
+      width: 100%;
+    }
+    [class*="flex-layout"]{
+      width: 100%;
+    }
+    .input {
+      width: 100%;
+    }
 }
 
 

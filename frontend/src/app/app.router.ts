@@ -4,6 +4,8 @@ import { RegisterComponent } from './register/register.component';
 import { SearchComponent } from './search/search.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AuthGaurd } from './service/auth-gaurd.service';
+import { UserProfileComponent } from './profile/user-profile/user-profile.component';
+
 
 export const routes : Routes = [
     {path :'' , component:LoginComponent},
@@ -11,6 +13,7 @@ export const routes : Routes = [
     {path :'register' , component:RegisterComponent},
     {path: 'homepage', component:HomePageComponent,canActivate:[AuthGaurd]},
     {path : 'search' , component:SearchComponent,canActivate:[AuthGaurd]},
+    {path: 'profile', component: UserProfileComponent,canActivate:[AuthGaurd]},
     {path :'**' , component:LoginComponent}
 ]
 

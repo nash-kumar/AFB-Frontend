@@ -25,8 +25,9 @@ import { HomePageComponent } from './home-page/home-page.component';
 import {MatMenuModule} from '@angular/material/menu';
 
 
-import { OrderModule } from 'ngx-order-pipe'
+import { OrderModule } from 'ngx-order-pipe';
 import { AuthGaurd } from './service/auth-gaurd.service';
+import { UserProfileComponent } from './profile/user-profile/user-profile.component';
 
 
 
@@ -36,7 +37,8 @@ import { AuthGaurd } from './service/auth-gaurd.service';
     LoginComponent,
     RegisterComponent,
     SearchComponent,
-    HomePageComponent
+    HomePageComponent,
+    UserProfileComponent
   ],
 
   imports: [

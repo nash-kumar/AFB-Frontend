@@ -1,5 +1,4 @@
 export interface Tile {
-
   firstname: string;
   surname: string;
   mobile: number;
