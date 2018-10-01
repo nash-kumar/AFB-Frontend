@@ -141,12 +141,9 @@ input:focus{
       padding: 0 7px;
   }
 
-
-
-  .ngx-pagination .current{
-      background: rgba(219, 9, 9, 0.5);
-      color: black;
-      font-size: 400px;
+  
+.page .ngx-pagination .current {
+  
+    background-color: firebrick;
+  
   }
-
- 
