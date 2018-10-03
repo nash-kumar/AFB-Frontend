@@ -1,0 +1,59 @@
+.grid-container {
+  display: flex;
+  margin: 20px;
+}
+
+.head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+.post{
+  margin: 0 100px;
+}
+.event{
+  margin: 0 200px;
+}
+
+.post{
+  float: right;
+}
+
+.container1{
+  width: 69%;
+}
+
+.container2{
+  width: 29%;
+}
+
+.dashboard-card {
+
+  padding: 20px 50px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+
+
+.post-img{
+  height: 80%;
+}
+
+.mat-card-content{
+  margin-bottom: 0;
+}
+

@@ -15,7 +15,7 @@ import { routes } from './app.router';
 
 import { ServiceService }from './service/service.service';
 import {HttpClientModule} from '@angular/common/http'
-import {MatDialogModule} from "@angular/material";
+import {MatDialogModule, MatCardModule} from "@angular/material";
 import swal from 'sweetalert';
 
 import { SearchComponent } from './header/search/search.component';
@@ -29,6 +29,8 @@ import { OrderModule } from 'ngx-order-pipe'
 import { AuthGaurd } from './service/auth-gaurd.service';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { HeaderComponent } from './header/header.component';
+import { BlogComponent } from './blog/blog.component';
+import { LayoutModule } from '@angular/cdk/layout';
 
 
 
@@ -40,7 +42,8 @@ import { HeaderComponent } from './header/header.component';
     SearchComponent,
     HomePageComponent,
     UserInfoComponent,
-    HeaderComponent
+    HeaderComponent,
+    BlogComponent
   ],
 
   imports: [
@@ -64,6 +67,8 @@ import { HeaderComponent } from './header/header.component';
     MatMenuModule,
     HttpClientModule,
     OrderModule,
+    MatCardModule,
+    LayoutModule,
     
   ],
  
