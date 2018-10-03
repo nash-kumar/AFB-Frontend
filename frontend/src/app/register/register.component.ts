@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormGroup,FormGroupDirective, NgForm, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ServiceService } from '../service/service.service';
+import {ErrorStateMatcher} from '@angular/material/core';
+
+
 
 @Component({
   selector: 'app-register',
@@ -12,7 +15,7 @@ export class RegisterComponent implements OnInit {
   
   
   registerForm: FormGroup;
- 
+  matcher = new MyErrorStateMatcher();
 
   minDate = new Date(1950, 0, 1);
   maxDate = new Date(2000, 0, 1);
@@ -21,41 +24,27 @@ export class RegisterComponent implements OnInit {
 
   
     this.registerForm = fb.group({
-      "fname": [null, Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z]+$')])],
-      "lname": [null, Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z]+$')])],
-      "Email": [null, Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9._]+$')])],
-      "phone": [null, Validators.compose([Validators.required, Validators.pattern('^[0-9]{10}$')])],
-      "date": [null , Validators.required],
-      "pass": [null,Validators.required],
-      "gender": [null, Validators.required],
-      "emp": [null, Validators.compose([Validators.required, Validators.pattern('^[0-9]{4}')])]
+      fname: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]+[a-zA-Z ]+$')]),
+      lname: new FormControl(null, [Validators.required, Validators.pattern('^[a-zA-Z]+[a-zA-Z ]*$')]),
+      Email: new FormControl(null, [Validators.required, Validators.pattern('^[a-zA-Z0-9._]+$')]),
+      phone: new FormControl(null, [Validators.required, Validators.pattern('^[0-9]{10}$')]),
+      date: new FormControl(null , Validators.required),
+      pass: new FormControl(null,Validators.required),
+      gender: new FormControl(null, Validators.required),
+      emp: new  FormControl(null, [Validators.required, Validators.pattern('^[0-9]{4}')])
     })
   
   }
+ 
   ngOnInit(){ 
-   
+    
   }
 
-  // navigateLogin(){
-  //   this.router.navigate(['login']);
-  //   console.log("added");
-  //   const data = { firstname: this.firstname, surname: this.lastname , mobile:this.phone ,email:this.Email, dob :this.date, password:this.pass ,emp_id:this.emp,gender:this.gender };
-  //   this.service.register(data).subscribe((response: any) => {
-  //   console.log("Response", response);
-  //   if (response.success) {
-  //   alert(response.message);
-  //   } else {
-  //   alert(response.error);
-  //   }
-    
-  //   })
-  
   navigateLogin() {
     
     var data = this.registerForm.value;
     const data1 = {firstname: data.fname, surname: data.lname, mobile: data.phone, email: data.Email + "@accionlabs.com", dob: data.date, password: data.pass, emp_id: data.emp, gender: data.gender}
     this.service.register(data1).subscribe((response: any) => {
-    console.log("Response", response);
     if(response.success){
       swal("Congrats!!", " You are a member of Accion Labs", "success");;
     this.router.navigate(['login']);
@@ -71,4 +60,10 @@ export class RegisterComponent implements OnInit {
   }
 
  
+}
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
 }

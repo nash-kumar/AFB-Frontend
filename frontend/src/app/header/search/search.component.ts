@@ -1,8 +1,8 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ServiceService } from '../service/service.service';
-import { Tile } from '../models/tile';
-import { AuthGaurd } from '../service/auth-gaurd.service';
+import { ServiceService } from '../../service/service.service';
+import { Tile } from '../../models/tile';
+import { AuthGaurd } from '../../service/auth-gaurd.service';
 
 @Component({
   selector: 'app-search',
@@ -34,13 +34,11 @@ export class SearchComponent implements OnInit, AfterViewInit{
     //   this.router.navigate(['login']);
     // }
     localStorage.removeItem("isLogin");
+    localStorage.removeItem("name");
     this.router.navigate(['login']);
   }
 
-  toHome(){
-    this.router.navigate(['homepage']);
-  }
-  
+ 
   userData(){
     this.service.getUsers().subscribe((response :any) => {
         this.success= true;
