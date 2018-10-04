@@ -27,6 +27,7 @@ import {MatMenuModule} from '@angular/material/menu';
 
 import { OrderModule } from 'ngx-order-pipe'
 import { AuthGaurd } from './service/auth-gaurd.service';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 
 
@@ -36,7 +37,8 @@ import { AuthGaurd } from './service/auth-gaurd.service';
     LoginComponent,
     RegisterComponent,
     SearchComponent,
-    HomePageComponent
+    HomePageComponent,
+    ForgotPasswordComponent
   ],
 
   imports: [

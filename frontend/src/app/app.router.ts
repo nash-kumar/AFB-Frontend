@@ -4,6 +4,7 @@ import { RegisterComponent } from './register/register.component';
 import { SearchComponent } from './search/search.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AuthGaurd } from './service/auth-gaurd.service';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 export const routes : Routes = [
     {path :'' , component:LoginComponent},
@@ -11,6 +12,7 @@ export const routes : Routes = [
     {path :'register' , component:RegisterComponent},
     {path: 'homepage', component:HomePageComponent,canActivate:[AuthGaurd]},
     {path : 'friends' , component:SearchComponent,canActivate:[AuthGaurd]},
+    {path: 'forgot/reset/:token', component:ForgotPasswordComponent},
     {path :'**' , component:LoginComponent}
 ]
 
