@@ -31,9 +31,6 @@ export class LoginComponent implements OnInit {
       Email: new FormControl('', [Validators.required, Validators.pattern(/^[a-z0-9_.]+$/i)]),
       password: new FormControl('', Validators.required)
     });
-
-   
-
     let tocken = localStorage.getItem('isLogin');
     if (tocken) {
       this.router.navigate(['homepage']);

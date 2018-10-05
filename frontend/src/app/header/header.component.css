@@ -34,11 +34,20 @@
     font-size: 21px;
     /* background-color:rgba(219, 9, 9, 0.1); */
     padding: 4px 0 ;
-    
+    cursor: -webkit-grabbing; cursor: grabbing;
     outline: none;
     margin-left: 15px;
     padding: 0 7px;
   }
+  /* .btn-1.active,.btn-2.active,.btn-3.active{
+    color:rgb(136, 133, 133);
+  } */
+
+  .active a:hover{
+    color: rgb(93, 93, 92);
+  }
+ 
+  
   .btn-3{
     position: absolute;
     right: 30px;
