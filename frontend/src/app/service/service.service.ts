@@ -34,6 +34,14 @@ shareDataSubject = new Subject<any>();
     let url = AppSettings.BASE_URL + AppSettings.USER_LOGIN ;
     return this.getPost(url,data,httpOption);
   }
+  public resetPassword(data) {
+    const httpOption = {
+      headers: new HttpHeaders({ 'Content-type' : 'application/json'})
+    };
+    let url = AppSettings.BASE_URL + AppSettings.USER_FORGOT ;
+    return this.getPost(url,data,httpOption);
+  }
+  
   public getPost(url,data,key){
     return this.http.post(url, { "data": data }, key)
   }
@@ -47,5 +55,13 @@ shareDataSubject = new Subject<any>();
     this.shareDataSubject.next(data);
   }
 
+  public forgotPassword(data, id){
+    const httpOption = {
+      headers: new HttpHeaders({ 'Content-type' : 'application/json'})
+    };
+    let url = AppSettings.BASE_URL + AppSettings.USER_RESET + id;
+    console.log({"data": data});
+    return this.http.post(url,{"data":data});
+  }
 
 }
