@@ -1,4 +1,16 @@
-
+.head{
+   
+    margin: 0;
+    width: 100%;
+    height: 59vh;
+    background-repeat: no-repeat;
+    
+    background: linear-gradient(to right bottom,rgba(219, 9, 9, 0.9), rgba(51, 51, 51, 0.8)),
+    url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=555e87ecbee5d64ab3ae0e0eb6cb1e29&auto=format&fit=crop&w=500&q=60");
+    background-size: cover;
+    background-position: bottom;
+ 
+  }
 .grid{
     max-width: 60%;
     margin: 5px;
@@ -20,7 +32,7 @@
 
 input[type = text]{
     position: absolute;
-    right: 180px;
+    right: 30px;
     width: 18%;
     height: 30px;
     border-radius: 25px;
@@ -28,7 +40,7 @@ input[type = text]{
     opacity: 0.6;
     outline: none;
     font-size: 18px;
-    margin-top: 2px;
+    margin-top: 70px;
     padding: 17px 17px;
     transition: all .3s ease;
 }
@@ -53,8 +65,8 @@ input:focus{
 
 .search{
     position: absolute;
-    right:  200px;
-    
+    right:  50px;
+    margin-top: 76px;
     color: lightslategray;
 }
 
@@ -105,10 +117,12 @@ input:focus{
   }
 
   .img{
-      
-      margin-left: 750px;
+
+     position: static;
+     float: inherit;
+     margin-left: 39%;
       width: 400px;
-      margin-top: 100px;
+      margin-top: 190px;
     
   }
 
@@ -127,15 +141,9 @@ input:focus{
       padding: 0 7px;
   }
 
-  .head{
-    margin-top:8vh;
-    height: 59vh; 
-    clip-path: polygon(0 0, 100% 0,100% 45vh, 0 100%);
-    background-image: linear-gradient(to right bottom,rgba(219, 9, 9, 0.8), rgba(51, 51, 51, 0.8)),
-    url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-0.3.5&s=11c31aebc80ec24448a30fd7f6f60c2c&auto=format&fit=crop&w=1189&q=80");
-    background-repeat:no-repeat;
-    background-size: cover;
-    background-position: bottom;
-    
-
+  
+.page .ngx-pagination .current {
+  
+    background-color: firebrick;
+  
   }

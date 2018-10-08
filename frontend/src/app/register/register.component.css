@@ -92,6 +92,10 @@
     animation: moveFromBottom 1s ease-out;
 }
 
+  .swal-button{
+      background-color: firebrick;
+  }
+
 
   @keyframes moveInRight {
 

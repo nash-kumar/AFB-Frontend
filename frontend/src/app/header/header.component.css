@@ -1,0 +1,46 @@
+.links{
+    position: absolute;
+    right: 150px;
+  }
+
+  .fb,.web,.ins,.you,.twitter{
+  
+    width: 35px;
+    margin:0 5px;
+    margin-top: 10px;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+     
+  }
+  
+  .fb:hover,.web:hover,.ins:hover,.you:hover,.twitter:hover{
+    opacity: 1;
+    border-radius: 30%;
+    padding: 3px; 
+  }
+  .navbar {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 8vh; 
+    background-color:rgba(219, 9, 9, 0.4);
+  }
+  .btn-1,.btn-2,.btn-3{
+    font-size: 21px;
+    /* background-color:rgba(219, 9, 9, 0.1); */
+    padding: 4px 0 ;
+    
+    outline: none;
+    margin-left: 15px;
+    padding: 0 7px;
+  }
+  .btn-3{
+    position: absolute;
+    right: 30px;
+    padding: 0 7px;
+  }    

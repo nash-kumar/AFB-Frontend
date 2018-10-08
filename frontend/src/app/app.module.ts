@@ -15,19 +15,24 @@ import { routes } from './app.router';
 
 import { ServiceService }from './service/service.service';
 import {HttpClientModule} from '@angular/common/http'
-import {MatDialogModule} from "@angular/material";
+import {MatDialogModule, MatCardModule} from "@angular/material";
 import swal from 'sweetalert';
 
-import { SearchComponent } from './search/search.component';
+import { SearchComponent } from './header/search/search.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 
-import { HomePageComponent } from './home-page/home-page.component';
+import { HomePageComponent } from './header/home-page/home-page.component';
 import {MatMenuModule} from '@angular/material/menu';
 
 
 import { OrderModule } from 'ngx-order-pipe'
 import { AuthGaurd } from './service/auth-gaurd.service';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { UserInfoComponent } from './user-info/user-info.component';
+import { HeaderComponent } from './header/header.component';
+import { BlogComponent } from './blog/blog.component';
+import { LayoutModule } from '@angular/cdk/layout';
+
 
 
 
@@ -38,7 +43,10 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     RegisterComponent,
     SearchComponent,
     HomePageComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    UserInfoComponent,
+    HeaderComponent,
+    BlogComponent
   ],
 
   imports: [
@@ -62,6 +70,8 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     MatMenuModule,
     HttpClientModule,
     OrderModule,
+    MatCardModule,
+    LayoutModule,
     
   ],
  
