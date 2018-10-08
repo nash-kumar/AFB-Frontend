@@ -12,7 +12,7 @@ export const routes : Routes = [
     {path :'register' , component:RegisterComponent},
     {path: 'homepage', component:HomePageComponent,canActivate:[AuthGaurd]},
     {path : 'friends' , component:SearchComponent,canActivate:[AuthGaurd]},
-    {path: 'forgot/reset/:token', component:ForgotPasswordComponent},
+    {path: 'user/reset/:token', component:ForgotPasswordComponent},
     {path :'**' , component:LoginComponent}
 ]
 

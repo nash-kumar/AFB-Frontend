@@ -6,5 +6,5 @@ export class AppSettings {
     public static USER_LOGIN ='user/login';
     public static USER_LIST='user/list';
     public static USER_FORGOT = 'user/forgot';
-    public static USER_RESET = 'user/reset/:token';
+    public static USER_RESET = 'user/reset/';
 }

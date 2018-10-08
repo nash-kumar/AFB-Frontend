@@ -55,12 +55,13 @@ shareDataSubject = new Subject<any>();
     this.shareDataSubject.next(data);
   }
 
-  public forgotPassword(passwordData){
+  public forgotPassword(data, id){
     const httpOption = {
       headers: new HttpHeaders({ 'Content-type' : 'application/json'})
     };
-    let url = AppSettings.BASE_URL + AppSettings.USER_RESET;
-    return this.http.post(url,{"data": passwordData}, httpOption);
+    let url = AppSettings.BASE_URL + AppSettings.USER_RESET + id;
+    console.log({"data": data});
+    return this.http.post(url,{"data":data});
   }
 
 }

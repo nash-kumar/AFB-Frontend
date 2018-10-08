@@ -95,7 +95,6 @@ export class LoginComponent implements OnInit {
     const data = {"user":{ "email": emailData}}
     this.service.resetPassword(data).subscribe((response: any) => {
       if(response.success){
-        debugger;
         this.show = true;
         swal("", `Email sent to ${emailData}`, "success");
       } else{
