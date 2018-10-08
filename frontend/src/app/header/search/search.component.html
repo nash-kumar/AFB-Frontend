@@ -11,7 +11,7 @@
 <div class="main">
  
   <mat-accordion>
-     <mat-expansion-panel class="grid" (opened)="panelOpenState = true" (closed)="panelOpenState = false" *ngFor="let tile of tiles | orderBy: 'firstname'  | paginate: { itemsPerPage: 3,currentPage: p}"> 
+     <mat-expansion-panel class="grid" (opened)="panelOpenState = true" (closed)="panelOpenState = false" *ngFor="let tile of tiles | orderBy: 'firstname'  | paginate: { itemsPerPage: 10,currentPage: p}"> 
       <mat-expansion-panel-header>
         <mat-panel-title class="header">
           <mat-icon class="icon">person</mat-icon> {{tile.firstname}} {{ tile.surname}}

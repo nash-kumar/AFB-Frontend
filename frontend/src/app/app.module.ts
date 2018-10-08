@@ -7,7 +7,7 @@ import { MatButtonModule, MatInputModule,MatSelectModule,MatRadioModule,MatDatep
          MatGridListModule,
          MatExpansionModule,
          MatPaginatorModule,
-                              } from '@angular/material';
+        } from '@angular/material';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
