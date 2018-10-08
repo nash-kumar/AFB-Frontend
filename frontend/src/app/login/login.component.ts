@@ -63,7 +63,7 @@ export class LoginComponent implements OnInit {
       }else if(response.success){
         swal("Good job!", "something is fishy", "success");
       }else{
-        swal("Sorry!", "Incorrect ", "error");
+        swal("Sorry!", "Incorrect login", "error");
       }
       }, (err) => {
         swal("Sorry", "Incorrect Login", "error");})
@@ -86,7 +86,20 @@ export class LoginComponent implements OnInit {
   onReset(){
     this.show = false;
   }
-}
+
+  resetPassword(emailInput){
+    var emailData = emailInput.value + '@accionlabs.com' ;
+    const data = {"user":{ "email": emailData}}
+    this.service.resetPassword(data).subscribe((response: any) => {
+      if(response.success){
+        this.show = true;
+        swal("", `Email sent to ${emailData}`, "success");
+      } else{
+        swal("Sorry ","Email not found","error")
+      }
+ });
+
+}}
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {

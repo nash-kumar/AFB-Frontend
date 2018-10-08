@@ -7,7 +7,7 @@ import { MatButtonModule, MatInputModule,MatSelectModule,MatRadioModule,MatDatep
          MatGridListModule,
          MatExpansionModule,
          MatPaginatorModule,
-                              } from '@angular/material';
+        } from '@angular/material';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
@@ -27,10 +27,12 @@ import {MatMenuModule} from '@angular/material/menu';
 
 import { OrderModule } from 'ngx-order-pipe'
 import { AuthGaurd } from './service/auth-gaurd.service';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { HeaderComponent } from './header/header.component';
 import { BlogComponent } from './blog/blog.component';
 import { LayoutModule } from '@angular/cdk/layout';
+
 
 
 
@@ -41,6 +43,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     RegisterComponent,
     SearchComponent,
     HomePageComponent,
+    ForgotPasswordComponent,
     UserInfoComponent,
     HeaderComponent,
     BlogComponent

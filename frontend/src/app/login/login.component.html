@@ -25,8 +25,16 @@
                     </div>
                 </form>  
                  <div class="forgotcard" *ngIf = "!show">
-                        <p><mat-icon class="mail-icon">mail_outline</mat-icon>Check your mail to reset the password</p>
-                        <button mat-stroked-button color = "warn" class="btn" (click) = "navigateBack()">Back</button>
+                     <div class="forgot-layout">
+                            <mat-form-field class="emailInp">
+                            <input matInput placeholder="Email to reset password" type="email" #passEmailInput>
+                             <span matSuffix style="color: firebrick;" >@accionlabs.com</span>
+                            </mat-form-field>
+                            <div class="btn-layout2">
+                                    <button mat-stroked-button color = "primary" class="btn1" (click) = "resetPassword(passEmailInput)">Submit</button>
+                                    <button mat-stroked-button color = "warn" class="btn2" (click) = "navigateBack()">Back</button>       
+                             </div>
+                            </div>
                     </div>       
             </div>     
         </div>
