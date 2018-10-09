@@ -8,7 +8,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./forgot-password.component.css']
 })
 export class ForgotPasswordComponent implements OnInit {
-
+  hide1 = true;
+  hide2 = true;
   forgotForm: FormGroup;
   id: string;
 

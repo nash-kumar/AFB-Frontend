@@ -62,7 +62,8 @@
       <div class="div-4">
         
         <mat-form-field class="inp-5">
-          <input matInput placeholder="Password" type="password" formControlName="pass" [errorStateMatcher]="matcher">
+          <input matInput placeholder="Password"  [type]="hide ? 'password' : 'text'" formControlName="pass" [errorStateMatcher]="matcher">
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
           <mat-error *ngIf="!registerForm.hasError('required')">
             Password is <strong>Required </strong>
           </mat-error>

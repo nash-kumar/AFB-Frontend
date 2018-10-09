@@ -1,21 +1,45 @@
-<div class="main-post">
-  <mat-form-field appearance="fill" class="upload"> 
-    <mat-label style="font-size:33px;">What's on your mind!</mat-label>
-    <textarea matInput placeholder="Write Here ....." class="placeholder"></textarea>
-    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-  </mat-form-field>
-<div class="post-btn">
-  <button mat-raised-button class="btn-1">Post</button>
+
+  <div class="main-post">
+    <div class="text-post">
+    <mat-form-field appearance="fill" class="upload">
+      <mat-label style="font-size:33px;">What's on your mind!</mat-label>
+      <textarea matInput placeholder="Write Here ....." class="placeholder"></textarea>
+      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+    </mat-form-field>
+    <div class="post-btn">
+      <button mat-raised-button class="btn-1">Post</button>
+      <button mat-raised-button type="submit" class="btn-1">upload image</button>
+      <input type="file" #Image accept="image/*">
+    </div>
   </div>
-</div>
+    
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+            bred for hunting.
+          </p>
+        </mat-card-content>
+        
+      </mat-card>
+    
+  </div>
+ 
 
 <div class="head">
-    <h1 class="post">Posts</h1>
-    <h1 class="event">Upcoming Events</h1>
-</div>   
+  <h1 class="post">Posts</h1>
+  <h1 class="event">Upcoming Events</h1>
+</div>
 
 <div class="grid-container">
-  
+
   <mat-grid-list class="container1" cols="1" rowHeight="820px">
     <mat-grid-tile *ngFor="let card1 of cards1 | async" [colspan]="card1.cols" [rowspan]="card1.rows">
       <mat-card class="dashboard-card">
@@ -30,31 +54,31 @@
             </mat-menu>
           </mat-card-title>
           <mat-card-subtitle> {{'Designation'}} </mat-card-subtitle>
-        </mat-card-header> 
-        <img mat-card-image class="post-img"  src="https://images.unsplash.com/photo-1534109284468-ad30ffd1f41d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f4748c1ef0d8c04f6a5a8163d87e97dd&auto=format&fit=crop&w=500&q=60">
-      
+        </mat-card-header>
+        <img mat-card-image class="post-img" src="https://images.unsplash.com/photo-1534109284468-ad30ffd1f41d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f4748c1ef0d8c04f6a5a8163d87e97dd&auto=format&fit=crop&w=500&q=60">
 
-  <mat-card-content>
-    {{'Say something about the post........'}}
-    </mat-card-content>
- 
+
+        <mat-card-content>
+          {{'Say something about the post........'}}
+        </mat-card-content>
+
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
-  
+
   <mat-grid-list class='container2' cols="1" rowHeight="250px">
     <mat-grid-tile *ngFor="let card2 of cards2 | async" [colspan]="card2.cols" [rowspan]="card2.rows">
       <mat-card class="dashboard-card">
         <mat-card-header>
           <mat-card-title> {{'Event Name'}} </mat-card-title>
-        </mat-card-header> 
+        </mat-card-header>
         <mat-card-content>
           <h1>Accion Cricket League</h1>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
-  
 
- 
+
+
 </div>

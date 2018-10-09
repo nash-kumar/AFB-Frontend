@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   name: String;
   mail;
+  hide = true;
 
   show = true;
 

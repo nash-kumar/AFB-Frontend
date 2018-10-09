@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   
 }
 .post{
@@ -59,18 +60,28 @@
 
 .main-post{
   display: flex;
+  /* flex-direction: column; */
+  /* border: 1px solid green; */
+  max-width: 100%;
+  /* align-items: center; */
+  /* justify-content: center; */
+  margin: 2% ;
+}
+
+.text-post{
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 50vh;
+  flex: 1;
+  /* border: 1px solid yellow; */
 }
 .upload{
-  width: 50%;
+  width: 70%;
   color: firebrick;
  
 }
 .placeholder{
   height: 200px;
+  min-height: 200px;
+  max-height: 220px;
   font-size: 20px;
   padding-top: 17px;
   margin-left: 10px;
@@ -84,6 +95,7 @@
   font-weight:500;
   letter-spacing: 1px;
   text-transform: uppercase;
+  border: 1px solid lightgray;
 }
 
 .btn-1:hover{
@@ -93,3 +105,12 @@
   background-color: #fafafa;
 }
 
+.example-card {
+  max-width: 500px;
+  flex: 1;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}

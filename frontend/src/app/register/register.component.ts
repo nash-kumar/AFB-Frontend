@@ -13,7 +13,7 @@ import {ErrorStateMatcher} from '@angular/material/core';
 })
 export class RegisterComponent implements OnInit {
   
-  
+  hide =true;
   registerForm: FormGroup;
   matcher = new MyErrorStateMatcher();
 
