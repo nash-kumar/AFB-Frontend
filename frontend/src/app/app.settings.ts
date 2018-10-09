@@ -5,4 +5,6 @@ export class AppSettings {
     public static USER_REGISTER ='user/register';
     public static USER_LOGIN ='user/login';
     public static USER_LIST='user/list';
+    public static USER_PROFILE ='user/';
 }
+
