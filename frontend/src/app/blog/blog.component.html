@@ -1,37 +1,41 @@
-
-  <div class="main-post">
-    <div class="text-post">
+<div class="main-post">
+  <div class="text-post">
     <mat-form-field appearance="fill" class="upload">
       <mat-label style="font-size:33px;">What's on your mind!</mat-label>
-      <textarea matInput placeholder="Write Here ....." class="placeholder"></textarea>
+      <textarea matInput placeholder="Write Here ....." class="placeholder" (click)="showCard()" [(ngModel)]="Caption" ></textarea>
       <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
     </mat-form-field>
-    <div class="post-btn">
+    <div class="post-btn" >
       <button mat-raised-button class="btn-1">Post</button>
-      <button mat-raised-button type="submit" class="btn-1">upload image</button>
-      <input type="file" #Image accept="image/*">
+      <div class="hide-inp">
+        <div class="fake-btn">
+          <a style="align-self:center;" >Upload a image</a>
+        </div>
+        <div class="file-inp">
+          <input type="file" #Image accept="image/*" class="btn-2" (change)="handleFileInput($event.target.files)">
+        </div>
+      </div>
     </div>
   </div>
-    
-      <mat-card class="example-card">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Shiba Inu</mat-card-title>
-          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-        <mat-card-content>
-          <p>
-            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-            bred for hunting.
-          </p>
-        </mat-card-content>
-        
-      </mat-card>
-    
-  </div>
- 
+  
+  <div class="example-card" *ngIf="!show"></div>
+  <mat-card class="example-card"  *ngIf="show" >
+      <div class="preview">Preview</div>
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title style="margin-top:10px;" > {{ userName }} </mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="imageUrl" class="card-img">
+    <mat-card-content class="capt">
+      <p class="text">
+        {{Caption}}
+      </p>
+    </mat-card-content>
+  
+  </mat-card>
+
+</div>
+
 
 <div class="head">
   <h1 class="post">Posts</h1>
