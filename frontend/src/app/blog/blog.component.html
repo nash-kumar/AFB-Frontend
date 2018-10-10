@@ -1,21 +1,49 @@
 <div class="main-post">
-  <mat-form-field appearance="fill" class="upload"> 
-    <mat-label style="font-size:33px;">What's on your mind!</mat-label>
-    <textarea matInput placeholder="Write Here ....." class="placeholder"></textarea>
-    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-  </mat-form-field>
-<div class="post-btn">
-  <button mat-raised-button class="btn-1">Post</button>
+  <div class="text-post">
+    <mat-form-field appearance="fill" class="upload">
+      <mat-label style="font-size:33px;">What's on your mind!</mat-label>
+      <textarea matInput placeholder="Write Here ....." class="placeholder" (click)="showCard()" [(ngModel)]="Caption" ></textarea>
+      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+    </mat-form-field>
+    <div class="post-btn" >
+      <button mat-raised-button class="btn-1">Post</button>
+      <div class="hide-inp">
+        <div class="fake-btn">
+          <a style="align-self:center;" >Upload a image</a>
+        </div>
+        <div class="file-inp">
+          <input type="file" #Image accept="image/*" class="btn-2" (change)="handleFileInput($event.target.files)">
+        </div>
+      </div>
+    </div>
   </div>
+  
+  <div class="example-card" *ngIf="!show"></div>
+  <mat-card class="example-card"  *ngIf="show" >
+      <div class="preview">Preview</div>
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title style="margin-top:10px;" > {{ userName }} </mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="imageUrl" class="card-img">
+    <mat-card-content class="capt">
+      <p class="text">
+        {{Caption}}
+      </p>
+    </mat-card-content>
+  
+  </mat-card>
+
 </div>
 
+
 <div class="head">
-    <h1 class="post">Posts</h1>
-    <h1 class="event">Upcoming Events</h1>
-</div>   
+  <h1 class="post">Posts</h1>
+  <h1 class="event">Upcoming Events</h1>
+</div>
 
 <div class="grid-container">
-  
+
   <mat-grid-list class="container1" cols="1" rowHeight="820px">
     <mat-grid-tile *ngFor="let card1 of cards1 | async" [colspan]="card1.cols" [rowspan]="card1.rows">
       <mat-card class="dashboard-card">
@@ -30,31 +58,31 @@
             </mat-menu>
           </mat-card-title>
           <mat-card-subtitle> {{'Designation'}} </mat-card-subtitle>
-        </mat-card-header> 
-        <img mat-card-image class="post-img"  src="https://images.unsplash.com/photo-1534109284468-ad30ffd1f41d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f4748c1ef0d8c04f6a5a8163d87e97dd&auto=format&fit=crop&w=500&q=60">
-      
+        </mat-card-header>
+        <img mat-card-image class="post-img" src="https://images.unsplash.com/photo-1534109284468-ad30ffd1f41d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f4748c1ef0d8c04f6a5a8163d87e97dd&auto=format&fit=crop&w=500&q=60">
 
-  <mat-card-content>
-    {{'Say something about the post........'}}
-    </mat-card-content>
- 
+
+        <mat-card-content>
+          {{'Say something about the post........'}}
+        </mat-card-content>
+
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
-  
+
   <mat-grid-list class='container2' cols="1" rowHeight="250px">
     <mat-grid-tile *ngFor="let card2 of cards2 | async" [colspan]="card2.cols" [rowspan]="card2.rows">
       <mat-card class="dashboard-card">
         <mat-card-header>
           <mat-card-title> {{'Event Name'}} </mat-card-title>
-        </mat-card-header> 
+        </mat-card-header>
         <mat-card-content>
           <h1>Accion Cricket League</h1>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
-  
 
- 
+
+
 </div>
