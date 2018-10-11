@@ -115,7 +115,7 @@
 .example-card {
   max-width: 580px;
   flex: 1;
-  height: 580px;
+  height: 600px;
 }
 
 .example-header-image {
@@ -207,9 +207,10 @@ p{
 .preview{
  flex-direction: column;
  font-size: 20px;
-  font-weight:bold 400;
-  letter-spacing: 1px;
+  font-weight:bold 900;
+  letter-spacing: 70px;
+  height: 40px;
   text-transform: uppercase;
-  align-self: center;
+  color:firebrick;
  
 }

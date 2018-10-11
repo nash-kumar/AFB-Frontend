@@ -6,7 +6,7 @@
       <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
     </mat-form-field>
     <div class="post-btn" >
-      <button mat-raised-button class="btn-1">Post</button>
+      <button mat-raised-button class="btn-1" (click)="post()" >Post</button>
       <div class="hide-inp">
         <div class="fake-btn">
           <a style="align-self:center;" >Upload a image</a>
@@ -49,7 +49,7 @@
       <mat-card class="dashboard-card">
         <mat-card-header>
           <mat-card-title>
-            {{'Name'}}
+            {{ postName }}
             <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
               <mat-icon>more_vert</mat-icon>
             </button>
@@ -59,7 +59,7 @@
           </mat-card-title>
           <mat-card-subtitle> {{'Designation'}} </mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image class="post-img" src="https://images.unsplash.com/photo-1534109284468-ad30ffd1f41d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f4748c1ef0d8c04f6a5a8163d87e97dd&auto=format&fit=crop&w=500&q=60">
+        <img mat-card-image class="post-img" [src]="postImage">
 
 
         <mat-card-content>

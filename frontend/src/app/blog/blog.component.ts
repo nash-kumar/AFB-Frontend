@@ -14,7 +14,10 @@ export class BlogComponent implements OnInit {
   fileToUpload: File = null;
   show = false;
   userName: String;
- 
+  postName: String;
+  postImage: String = "/assets/img/No-image-full.jpg";
+  cards1;
+  
   handleFileInput(file: FileList){
     this.show = true;
      this.fileToUpload = file.item(0);
@@ -30,22 +33,7 @@ export class BlogComponent implements OnInit {
    this.show = true;
  }
 
-  /** Based on the screen size, switch from standard to one column per row */
- cards1 = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map(({ matches }) => {
-      if (matches) {
-        return [
-          { title: 'Card 1', cols: 1, rows: 1 }
-        ];
-      }
 
-      return [
-        { title: 'Card 1', cols: 1, rows: 1 },
-        { title: 'Card 1', cols: 1, rows: 1 },
-        
-      ];
-    })
-  );
   cards2 = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
       if (matches) {
@@ -76,6 +64,28 @@ export class BlogComponent implements OnInit {
     
     this.service.shareDataSubject.subscribe(recievedData => {this.userName = recievedData})
     this.userName = localStorage.getItem('name');
+  }
+
+  post(e){
+    this.postName = this.userName;
+    this.postImage = this.imageUrl;
+    console.log(e);
+      /** Based on the screen size, switch from standard to one column per row */
+ this.cards1 = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
+  map(({ matches }) => {
+    if (matches) {
+      return [
+        { title: 'Card 1', cols: 1, rows: 1 }
+      ];
+    }
+
+    return [
+      { title: 'Card 1', cols: 1, rows: 1 }
+      
+    ];
+  })
+);
+    
   }
 
 }
