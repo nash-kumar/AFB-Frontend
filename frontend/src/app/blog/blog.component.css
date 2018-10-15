@@ -7,9 +7,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  
+  margin:1% 0 ;
 }
+
 .post{
   margin: 0 100px;
 }
@@ -118,7 +118,7 @@
   height: 600px;
 }
 
-.example-header-image {
+.card-image {
   background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR-fT-6OU9Fca5NtqPJMcabn0hKUVincjlwVs2jdFWyoB6Zk_lTw');
   background-size: cover;
   

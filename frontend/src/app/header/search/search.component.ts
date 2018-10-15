@@ -7,7 +7,7 @@ import { AuthGaurd } from '../../service/auth-gaurd.service';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  styleUrls: ['./search.component.scss']
 })
 
 export class SearchComponent implements OnInit, AfterViewInit{
@@ -76,20 +76,21 @@ export class SearchComponent implements OnInit, AfterViewInit{
       return it[propName].toLowerCase().includes(filterString) || it[propName2].toLowerCase().includes(filterString);
     });
   
-
 }
 
-sorted(value: any, fname: any): any {
-  return value.sort((a, b) => {
-    if(a[fname] > b[fname]){
-      return -1;
-    }
-    else{
-      return 1;
-    }
-  });
+// sorted(value: any, fname: any): any {
+//   console.log(fname);
+  
+//   return value.sort((a, b) => {
+//     if(a[fname] > b[fname] ){
+//       return -1;
+//     }
+//     else{
+//       return 1;
+//     }
+//   });
 
-}
+// }
 
 
 

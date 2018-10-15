@@ -46,10 +46,6 @@ export class BlogComponent implements OnInit {
         { title: 'Card 1', cols: 1, rows: 1 },
         { title: 'Card 1', cols: 1, rows: 1 },
         { title: 'Card 1', cols: 1, rows: 1 },
-        { title: 'Card 1', cols: 1, rows: 1 },
-        { title: 'Card 1', cols: 1, rows: 1 },
-        { title: 'Card 1', cols: 1, rows: 1 },
-        { title: 'Card 1', cols: 1, rows: 1 }
       ];
     })
   );

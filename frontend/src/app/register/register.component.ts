@@ -12,7 +12,8 @@ import {ErrorStateMatcher} from '@angular/material/core';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  
+  fname;
+  lname;
   hide =true;
   registerForm: FormGroup;
   matcher = new MyErrorStateMatcher();
@@ -43,7 +44,9 @@ export class RegisterComponent implements OnInit {
   navigateLogin() {
     
     var data = this.registerForm.value;
-    const data1 = {firstname: data.fname, surname: data.lname, mobile: data.phone, email: data.Email + "@accionlabs.com", dob: data.date, password: data.pass, emp_id: data.emp, gender: data.gender}
+    this.fname = data.fname.toLowerCase();  
+    this.lname = data.lname.toLowerCase();
+    const data1 = {firstname: this.fname, surname: this.lname, mobile: data.phone, email: data.Email + "@accionlabs.com", dob: data.date, password: data.pass, emp_id: data.emp, gender: data.gender}
     this.service.register(data1).subscribe((response: any) => {
     if(response.success){
       swal("Congrats!!", " You are a member of Accion Labs", "success");;
