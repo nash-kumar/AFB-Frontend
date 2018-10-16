@@ -7,6 +7,7 @@ import { MatButtonModule, MatInputModule,MatSelectModule,MatRadioModule,MatDatep
          MatGridListModule,
          MatExpansionModule,
          MatPaginatorModule,
+         MatTooltipModule
         } from '@angular/material';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
@@ -72,6 +73,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     OrderModule,
     MatCardModule,
     LayoutModule,
+    MatTooltipModule
     
   ],
  

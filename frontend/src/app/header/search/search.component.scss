@@ -8,7 +8,6 @@
     url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=555e87ecbee5d64ab3ae0e0eb6cb1e29&auto=format&fit=crop&w=500&q=60");
     background-size: cover;
     background-position-y: 62%;
- 
   }
 .grid{ 
     margin: 5px;
@@ -21,11 +20,27 @@
     text-transform: capitalize;
 } */
 
-.email,.phone,.birthday,.emp,.sex{
+.phone,.birthday,.emp,.sex{
     color: rgb(109, 11, 11);
     font-size: 23px;
     font-weight: 200;
     letter-spacing: 2px;
+    float: right;
+    font-weight: 400;
+}
+
+.email1{
+    text-align: center;
+}
+
+.email{
+    color: rgb(109, 11, 11);
+    font-size: 23px;
+    font-weight: 200;
+    letter-spacing: 2px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
 }
 
 input[type = text]{
@@ -76,7 +91,7 @@ input:focus{
     text-align: center; 
     .flip{
     >.back{
-    text-align:start; 
+        text-align:start;
     }
 }
   }
@@ -113,19 +128,14 @@ input:focus{
     font-weight: 200;
     letter-spacing: 7px;
     /* margin-top: 40px; */
-    text-align: center;
-    
+    text-align: start;
+    // margin-top: 5%;
+    position: absolute;
+    top: 9%;
+    left: 2%;
   }
 
-  .img{
-
-     position: static;
-     float: inherit;
-     margin-left: 2%;
-      width: 400px;
-      margin-top: 75px;
-    
-  }
+ 
 
 
   .btn-1,.btn-2,.btn-3{
@@ -202,7 +212,7 @@ input:focus{
     >.back {
       display: block;
       color: black;
-      font-size: 17px;
+      font-size: 23px;
       width: inherit;
       background-size: cover!important;
       background-position: center!important;
@@ -210,6 +220,7 @@ input:focus{
       border-radius: 2%;
       padding: 1em 2em;
       background:white;
+    //   border: 2px solid black;
     }
 }
 
@@ -225,4 +236,3 @@ p {
     text-transform: capitalize;
     // color: firebrick;
 }
-

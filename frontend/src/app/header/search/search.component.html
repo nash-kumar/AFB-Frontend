@@ -2,7 +2,6 @@
 <div class="head">
    <div> <input type="text" [(ngModel)]="filteredName" (input) = "onSearch($event)" placeholder="Search A Fellow Accionite"><mat-icon class="search">search</mat-icon></div>
 
-        <img class="img" src="https://static1.squarespace.com/static/5ab6b93e5b409be7fa331cf1/t/5ac67b8c575d1f09cf1c833c/1535701410823/?format=1500w" alt="">
         <div class="text-1">
           <h4>Your Friends At <span style="color:lightslategrey;font-weight: 500;">Accion Labs</span></h4>
         </div>
@@ -67,7 +66,7 @@
      <p> {{ tile.firstname }}  {{tile.surname}}  </p> 
   </div>
   <div class="back">
-   <strong>Email : </strong> <span class="email"> {{tile.email}}</span> <br>
+   <div class="email1"><strong  >Email </strong></div> <span class="email"> {{tile.email}}</span> <hr> <br>
    <strong> Birthday :</strong> <span class="birthday"> {{tile.dob | date:'d,MMMM'}}</span> <br>
    <strong> Phone : </strong> <span class="phone"> {{tile.mobile}}</span> <br>
    <strong>Sex :</strong> <span class="sex"> {{tile.gender}} </span><br>

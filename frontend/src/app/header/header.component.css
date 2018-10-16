@@ -54,3 +54,12 @@
     padding: 0 7px;
   }    
 
+  .img{
+
+    position: static;
+    float: inherit;
+    margin-left: .5%;
+     width: 240px;
+     margin-top: 3px;
+   
+ }

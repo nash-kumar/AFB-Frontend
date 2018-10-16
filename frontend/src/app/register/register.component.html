@@ -21,13 +21,13 @@
           Accionite!</span></h1>
       <div class="div-1">
         <mat-form-field class="inp-1">
-          <input matInput placeholder="First Name" formControlName="fname" [errorStateMatcher]="matcher">
+          <input matInput placeholder="First Name"  matTooltip="Name should consist of characters(a-z)" matTooltipPosition="below" formControlName="fname" [errorStateMatcher]="matcher">
           <mat-error *ngIf="!registerForm.hasError('required')">
             Enter <strong>valid</strong> Name
           </mat-error>
         </mat-form-field>
         <mat-form-field class="inp-2">
-          <input matInput placeholder="Last Name" formControlName="lname" [errorStateMatcher]="matcher" >
+          <input matInput placeholder="Last Name" matTooltip="Name should consist of characters(a-z)" matTooltipPosition="below" formControlName="lname" [errorStateMatcher]="matcher" >
           <mat-error *ngIf="!registerForm.hasError('pattern')">
             Enter <strong>valid </strong>Name
           </mat-error>
@@ -35,7 +35,7 @@
       </div>
       <div class="div-2">
         <mat-form-field class="inp-3">
-          <input matInput placeholder="Email" formControlName="Email" [errorStateMatcher]="matcher">
+          <input matInput placeholder="Email" matTooltip="Enter your email id" matTooltipPosition="below" formControlName="Email" [errorStateMatcher]="matcher">
           <span matSuffix style="color: firebrick;" >@accionlabs.com</span>
           
           <mat-error *ngIf="!registerForm.hasError('pattern')">
@@ -48,13 +48,13 @@
       <div class="div-3">
         <mat-form-field class="inp-4">
             <span matPrefix>+91 &nbsp;</span>
-          <input matInput placeholder="Phone Number" formControlName="phone" [errorStateMatcher]="matcher">
+          <input matInput placeholder="Phone Number" matTooltip="Phone number should consist of 10 digits" matTooltipPosition="below" formControlName="phone" [errorStateMatcher]="matcher">
           <mat-error *ngIf="!registerForm.hasError('pattern')">
             Enter <strong>valid </strong>Phone Number
           </mat-error>
         </mat-form-field>
         <mat-form-field class="inp-6">
-          <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="DOB" formControlName="date" [errorStateMatcher]="matcher">
+          <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="DOB" matTooltip="Enter your birthday" matTooltipPosition="below" formControlName="date" [errorStateMatcher]="matcher">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
@@ -62,14 +62,14 @@
       <div class="div-4">
         
         <mat-form-field class="inp-5">
-          <input matInput placeholder="Password"  [type]="hide ? 'password' : 'text'" formControlName="pass" [errorStateMatcher]="matcher">
+          <input matInput placeholder="Password" matTooltip="A strong password consists of alphanumeric characters" matTooltipPosition="below" [type]="hide ? 'password' : 'text'" formControlName="pass" [errorStateMatcher]="matcher">
           <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
           <mat-error *ngIf="!registerForm.hasError('required')">
             Password is <strong>Required </strong>
           </mat-error>
         </mat-form-field>
         <mat-form-field class="inp-8">
-          <input matInput placeholder="Employee Id" formControlName="emp" [errorStateMatcher]="matcher">
+          <input matInput placeholder="Employee Id" matTooltip="Employee id should consist of 4 digits" matTooltipPosition="below" formControlName="emp" [errorStateMatcher]="matcher">
           <mat-error *ngIf="!registerForm.hasError('required')">
              Enter <strong>valid </strong> Employee Id
           </mat-error>
@@ -78,7 +78,7 @@
 
       </div>
       <div class="div-5">
-        <mat-radio-group value="Female" class="inp-7" style="margin-left:35%;" formControlName="gender">
+        <mat-radio-group value="Female" class="inp-7" matTooltip="Please select your gender" matTooltipPosition="below" style="margin-left:35%;" formControlName="gender">
           <mat-radio-button style="margin-right:5px;" value="Male" > Male </mat-radio-button>
           <mat-radio-button  value="Female"> Female </mat-radio-button>
         </mat-radio-group>
