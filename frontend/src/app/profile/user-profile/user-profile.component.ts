@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ServiceService } from '../../service/service.service';
 import { Tile } from '../../models/tile';
 import { AuthGaurd } from '../../service/auth-gaurd.service';
+import { Identifiers } from '@angular/compiler';
 
 @Component({
   selector: 'app-user-profile',
@@ -11,28 +12,17 @@ import { AuthGaurd } from '../../service/auth-gaurd.service';
 })
 export class UserProfileComponent implements OnInit {
 
-
-  constructor(private router:Router, private service: ServiceService,private auth: AuthGaurd) {}
-
   user = '';
-  success = false;
-  filteredName;
-  resultData;
-  a = [];
+  id: '';
 
-  userData(name){
-    this.service.getprofile(name).subscribe((response :any) => {
-       this.user = response.result;
-        this.a.push(this.user);
-    });
+  constructor(private router:Router, private service: ServiceService,private auth: AuthGaurd) { }
+
+  getPfoile(id: string){ 
+    
   }
 
   ngOnInit() {
-    let name = 'shanth';
-    this.userData(name);
-      var b = this.a;
-      console.log(b);
-
+    
   }
 
 }

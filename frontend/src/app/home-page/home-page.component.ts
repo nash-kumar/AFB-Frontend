@@ -19,6 +19,7 @@ export class HomePageComponent implements OnInit {
     localStorage.removeItem("name");
     localStorage.removeItem("isLogin");
     this.router.navigate(['login']);
+    this.router.navigate(['profile']);
 
   }
 
@@ -30,8 +31,16 @@ export class HomePageComponent implements OnInit {
     this.router.navigate(['search']);
   }
 
+  onProfile(id:string) {
+    if(confirm ('success') == true) {
+      this.service.getprofile(id).subscribe((res)=>{
+        console.log('user/'+id);
+      });
+    }
+    this.router.navigate(['profile']);
+  }
+
   getData(){
-    
     this.service.shareDataSubject.subscribe(recievedData => {this.userName = recievedData})
     this.userName = localStorage.getItem('name');
   }

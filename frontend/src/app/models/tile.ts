@@ -6,5 +6,14 @@ export interface Tile {
   dob: string;
   password: string;
   gender: string
-
 }
+
+interface TokenResponse {
+  token: string;
+}
+
+export interface TokenPayload {
+  email: string;
+  password: string;
+  name?: string;
+ }

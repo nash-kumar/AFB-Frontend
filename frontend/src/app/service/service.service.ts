@@ -43,11 +43,9 @@ shareDataSubject = new Subject<any>();
     return this.http.get<Tile[]>(url).map((data) => {return data})
   }
 
-
-  public getprofile(name){
-    let url = AppSettings.BASE_URL + AppSettings.USER_PROFILE+ name;
-    return this.http.get(url).map((data) => {return data})
-    
+  public getprofile(id){
+    let url = AppSettings.BASE_URL + AppSettings.USER_PROFILE + id;
+    return this.http.get(url).map(() => {return id})
   }
 
   sendDataToOtherComponent(data){
