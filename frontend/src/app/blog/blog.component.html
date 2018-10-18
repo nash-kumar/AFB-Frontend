@@ -12,7 +12,7 @@
           <a style="align-self:center;" >Upload a image</a>
         </div>
         <div class="file-inp">
-          <input type="file" #Image accept="image/*" class="btn-2" (change)="handleFileInput($event.target.files)">
+          <input type="file" #Image name="myImage" accept="image/*" class="btn-2" (change)="handleFileInput($event.target.files)">
         </div>
       </div>
     </div>
@@ -45,7 +45,7 @@
 
 <div class="grid-container">
 
-  <mat-grid-list class="container1" cols="1" rowHeight="820px">
+  <mat-grid-list class="container1" cols="1" rowHeight="800px">
     <mat-grid-tile *ngFor="let card1 of cards1 | async" [colspan]="card1.cols" [rowspan]="card1.rows">
       <mat-card class="dashboard-card">
         <mat-card-header>
@@ -63,10 +63,15 @@
         <img mat-card-image class="post-img" [src]="postImage">
 
 
-        <mat-card-content>
+        <mat-card-content  class="dashboard-card-content">
           {{'Say something about the post........'}}
         </mat-card-content>
-
+        <mat-card-actions class="card-actions">
+          <p>
+            <mat-icon class="like" [matBadge]="count"  matBadgePosition="before" matBadgeColor="warn" (click)="liked()" >thumb_up_alt</mat-icon>
+            <a href="https://icons8.com/icon/set/comment/all"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJASURBVGhD7dlLCA1RHMfxK4+yYIFCtkTKhpCFhSSxspCSSElKslAehZJssJA8Ctmh5L2xslBKNiyUVzZYSKSUd57fX7FxfveauffMzH8xv/rUXZzXNDPnnLmn06ZNm1oyEguxExdxD6/xDb/++IDnuIlTWIfpaDxDsQwXoEH+HXBZT7EfU1BrRmAzXsANrF8/cR1zUXl0B/R4uIHkdAmTkD2jcR6u06q8w2pkyzQ8huusDscwDANlJt7AdVCnK9C72VdmQLfXNdyEa9BMWSrj8AyuwSYdRKno6l1DTdMUvQSFopnCNRLFS4xCz2irkXuhq8Je9MxGuIrRvIfWtq55AFcxok2w0XTrKkR1CzY74CpE9R1jkOQyXIXIFiHJE7jCkW1BkkjbkaIOIIkrGN1xJPkMVziyI0iipd8VjmwfktyBKxzZWiTRbXKFI5uFJCvhCkf1FvZDS1vjj3CVIjqDrjkLVymiBegabRx/wFWM5D6GoGfOwVWOpNDn7gToRXINRHAVhbMc+tB3DTXpFcajVLRqusaa8hXzUDp6mU7ANVo3nbOsQN/RxehPMdd4Xb5ApwBZoj1NE4ul/pqag6zRAuQ6q4pW7rHInqVwHeZ2F4tRWY7CdZyDpvob0Lvw3xV7kOhsIvc5ySfohHcrJqOWFNnin4R20Ho512MPDuE0NI3r9y6swmwMR63RsdcjuMGL5vjtqPSRyJFtcBcgDzEf4TMVepb/vYDbWIOBDynrygbo+T6M3dA2YSLatOmZTuc38hu1PF+uA2gAAAAASUVORK5CYII=" class="comment"> </a>
+          </p>
+        </mat-card-actions>
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>

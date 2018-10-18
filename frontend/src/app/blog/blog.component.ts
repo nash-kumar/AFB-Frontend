@@ -10,28 +10,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent implements OnInit {
-  imageUrl:String = "/assets/img/No-image-full.jpg";
+  imageUrl: String = "/assets/img/No-image-full.jpg";
   fileToUpload: File = null;
   show = false;
   userName: String;
   postName: String;
   postImage: String = "/assets/img/No-image-full.jpg";
   cards1;
-  
-  handleFileInput(file: FileList){
-    this.show = true;
-     this.fileToUpload = file.item(0);
+  Caption: String;
+  count = 0;
 
-     var reader = new FileReader();
-     reader.onload = (event: any) => {
-        this.imageUrl = event.target.result; 
-     }
-     reader.readAsDataURL(this.fileToUpload);
+  handleFileInput(file: FileList) {
+    this.show = true;
+    this.fileToUpload = file.item(0);
+
+    var reader = new FileReader();
+    reader.onload = (event: any) => {
+      this.imageUrl = event.target.result;
+    }
+    reader.readAsDataURL(this.fileToUpload);
   }
 
- showCard(){
-   this.show = true;
- }
+  showCard() {
+    this.show = true;
+  }
 
 
   cards2 = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
@@ -50,38 +52,48 @@ export class BlogComponent implements OnInit {
     })
   );
 
-  constructor(private breakpointObserver: BreakpointObserver,private router:Router, private service: ServiceService) {}
+  constructor(private breakpointObserver: BreakpointObserver, private router: Router, private service: ServiceService) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.getData();
+    this.post();
   }
 
-  getData(){
-    
-    this.service.shareDataSubject.subscribe(recievedData => {this.userName = recievedData})
+  getData() {
+
+    this.service.shareDataSubject.subscribe(recievedData => { this.userName = recievedData })
     this.userName = localStorage.getItem('name');
   }
 
-  post(e){
+  post() {
     this.postName = this.userName;
     this.postImage = this.imageUrl;
-    console.log(e);
-      /** Based on the screen size, switch from standard to one column per row */
- this.cards1 = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-  map(({ matches }) => {
-    if (matches) {
-      return [
-        { title: 'Card 1', cols: 1, rows: 1 }
-      ];
-    }
-
-    return [
-      { title: 'Card 1', cols: 1, rows: 1 }
-      
-    ];
-  })
-);
     
+    // this.service.register(this.Caption).subscribe((response: any) => {
+    //   if(response.success){
+    //     console.log("posted");
+    //   } else {
+    //     console.log("fedasds");
+        
+    //   }
+    // })
+    /** Based on the screen size, switch from standard to one column per row */
+    this.cards1 = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
+      map(({ matches }) => {
+        if (matches) {
+          return [
+            { title: 'Card 1', cols: 1, rows: 1 }
+          ];
+        }
+        return [
+          { title: 'Card 1', cols: 1, rows: 1 }
+        ];
+      })
+    );
+  }
+
+  liked(){
+    this.count++;
   }
 
 }
