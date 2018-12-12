@@ -54,7 +54,7 @@ shareDataSubject = new Subject<any>();
   sendDataToOtherComponent(data){
     this.shareDataSubject.next(data);
   }
-
+  
   public forgotPassword(data, id){
     const httpOption = {
       headers: new HttpHeaders({ 'Content-type' : 'application/json'})

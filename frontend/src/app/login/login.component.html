@@ -1,51 +1,114 @@
 <div class="main">
-<header class="header">
-        <div class="flex-layout">
-            <div class="card-layout">
-                <h1> <span *ngIf = "show"> Welcome </span><span *ngIf = "!show"> Hey </span><span class="red">Accionite</span>!</h1>
-                <form class="login-form-layout" [formGroup] = "loginForm" *ngIf = "show">
-                    <mat-form-field class="login-full-width" >
-                      <input matInput placeholder="Email"  matTooltip="Enter your email id" matTooltipPosition="left" type="email" formControlName="Email" [errorStateMatcher]="matcher">
-                      <span matSuffix style="color: firebrick;" >@accionlabs.com</span>
-                      <mat-error *ngIf="!loginForm.hasError('Email')  && !loginForm.hasError('required')">
-                          Please enter a valid email address
-                        </mat-error>                  
-                    </mat-form-field>
-                    <mat-form-field class="login-full-width">
-                      <input matInput placeholder="Password" matTooltip="Enter valid password" matTooltipPosition="left" [type]="hide ? 'password' : 'text'" formControlName="password">
-                      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
-                      <mat-error *ngIf="!loginForm.hasError('password')">
-                          Password is <strong>required</strong>
-                        </mat-error>       
-                    </mat-form-field> 
-                    <a class="forgot" (click) = "onReset()">Forgot password?</a>
-                
-                    <div class="btn-layout">
-                        <button [disabled] = "loginForm.invalid" role="button" (click)="onNavDash()" mat-button color="primary" type="submit">Login</button>
-                        <button mat-button color="warn" role="button" (click)="navigateReg() " ><span class="reg-msg" >Not Yet Registered? </span> Register</button>
-                    </div>
-                </form>  
-                 <div class="forgotcard" *ngIf = "!show">
-                     <div class="forgot-layout">
-                            <mat-form-field class="emailInp">
-                            <input matInput placeholder="Email to reset password" type="email" #passEmailInput>
-                             <span matSuffix style="color: firebrick;" >@accionlabs.com</span>
-                            </mat-form-field>
-                            <div class="btn-layout2">
-                                    <button mat-stroked-button color = "primary" class="btn1" (click) = "resetPassword(passEmailInput)">Submit</button>
-                                    <button mat-stroked-button color = "warn" class="btn2" (click) = "navigateBack()">Back</button>       
-                             </div>
-                            </div>
-                    </div>       
-            </div>     
+  <header class="header">
+    <div class="flex-layout">
+      <div class="card-layout">
+        <h1>
+          <span *ngIf="show"> Welcome </span><span *ngIf="!show"> Hey </span
+          ><span class="red">Accionite</span>!
+        </h1>
+        <form class="login-form-layout" [formGroup]="loginForm" *ngIf="show">
+          <mat-form-field class="login-full-width">
+            <input
+              matInput
+              placeholder="Email"
+              matTooltip="Enter your email id"
+              matTooltipPosition="left"
+              type="email"
+              formControlName="Email"
+              [errorStateMatcher]="matcher"
+              data-test-hook="userName"
+            />
+            <span matSuffix style="color: firebrick;">@accionlabs.com</span>
+            <mat-error
+              *ngIf="
+                !loginForm.hasError('Email') && !loginForm.hasError('required')
+              "
+            >
+              Please enter a valid email address
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="login-full-width">
+            <input
+              matInput
+              placeholder="Password"
+              matTooltip="Enter valid password"
+              matTooltipPosition="left"
+              [type]="hide ? 'password' : 'text'"
+              formControlName="password"
+              data-test-hook="password"
+            />
+            <mat-icon matSuffix (click)="hide = !hide">{{
+              hide ? "visibility" : "visibility_off"
+            }}</mat-icon>
+            <mat-error *ngIf="!loginForm.hasError('password')">
+              Password is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <a class="forgot" (click)="onReset()">Forgot password?</a>
+
+          <div class="btn-layout">
+            <button
+              [disabled]="loginForm.invalid"
+              role="button"
+              (click)="onNavDash()"
+              mat-button
+              color="primary"
+              type="submit"
+              data-test-hook="submitBtn"
+            >
+              Login
+            </button>
+            <button
+              mat-button
+              color="warn"
+              role="button"
+              (click)="navigateReg()"
+            >
+              <span class="reg-msg">Not Yet Registered? </span> Register
+            </button>
+          </div>
+        </form>
+        <div class="forgotcard" *ngIf="!show">
+          <div class="forgot-layout">
+            <mat-form-field class="emailInp">
+              <input
+                matInput
+                placeholder="Email to reset password"
+                type="email"
+                #passEmailInput
+              />
+              <span matSuffix style="color: firebrick;">@accionlabs.com</span>
+            </mat-form-field>
+            <div class="btn-layout2">
+              <button
+                mat-stroked-button
+                color="primary"
+                class="btn1"
+                (click)="resetPassword(passEmailInput)"
+              >
+                Submit
+              </button>
+              <button
+                mat-stroked-button
+                color="warn"
+                class="btn2"
+                (click)="navigateBack()"
+              >
+                Back
+              </button>
+            </div>
+          </div>
         </div>
-        
+      </div>
+    </div>
+
     <div class="textbox">
       <div class="heading-primary">
         <span class="heading-primary-main">Accion Friends Book</span>
-        <span class="heading-primary-sub">Driving Outcomes Through Actions</span>
+        <span class="heading-primary-sub"
+          >Driving Outcomes Through Actions</span
+        >
       </div>
     </div>
   </header>
-
 </div>
